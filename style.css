@@ -245,7 +245,7 @@ main > img {
 .skillsList > ul > li{
     margin: 20px 0px 20px 0px;
     padding: 0px 10px 0px 10px;
-    list-style-image: url(/src/Ellipse1.svg);
+    list-style-image: url(src/Ellipse1.svg);
 }
 
 .skillsList > ul > li > p {
@@ -258,7 +258,7 @@ main > img {
 .tools {
     width: 80%;
 
-    background: url("/src/toolsWrapper.svg") no-repeat;
+    background: url("src/toolsWrapper.svg") no-repeat;
     background-size: 100% 100%;
 
     display: flex;
