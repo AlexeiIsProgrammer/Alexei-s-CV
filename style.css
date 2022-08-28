@@ -214,12 +214,13 @@ main > img {
 
 .hobbiesList {
     display: flex;
-    flex-flow: row nowrap;
+    flex-flow: row wrap;
     align-items: center;
     justify-content: space-between;
 }
 
 .hobbiesList > div {
+
     width: auto;
     display: flex;
     flex-flow: column nowrap;
@@ -227,6 +228,11 @@ main > img {
 }
 
 .hobbiesList > div > p {
+    font-size: 17px;
+}
+
+.hobbiesList > div > img {
+    max-width: 200px;
     font-size: 17px;
 }
 
@@ -258,9 +264,11 @@ main > img {
 .tools {
     width: 80%;
 
-    background: url("src/toolsWrapper.svg") no-repeat;
+    background-image: url("src/wrapper.svg");
+    background-repeat: no-repeat;    
     background-size: 100% 100%;
 
+    padding: 95px 20px 120px 20px;
     display: flex;
     align-items: center;
     flex-flow: column nowrap;
@@ -281,15 +289,15 @@ main > img {
 
 .bar {
     position: relative;
-    width: 200px;
-    height: 10px;
+    min-width: 200px;
+    min-height: 10px;
     border: 3px solid black;
 }
 
 .fillBar {
     position: absolute;
     background-color: #5ebfbc;
-    height: 100%;
+    min-height: 100%;
 }
 
 .toolsList > .subtitle:nth-child(1) > .bar > .fillBar {
@@ -341,6 +349,7 @@ main > img {
     display: flex;
     flex-flow: row nowrap;
     justify-content: space-between;
+    align-items: center;
     width: 60%;
 }
 
@@ -363,4 +372,129 @@ main > img {
     display: flex;
     flex-flow: column nowrap;   
     align-items: center;
+}
+
+/**/
+
+@media only screen and (max-width: 600px) {
+
+    .textStyle {
+        width: 80%;
+    }
+
+    .infoContent {
+        flex-wrap: wrap;
+    }
+
+    .hobbiesList {
+        justify-content: center;
+    }
+
+    .skillsList {
+        justify-content: center;
+    }
+    
+    .nameText h4{
+        font-size: 30px;
+    }
+
+    .nameText p{
+        font-size: 20px;
+    }
+    
+    
+}
+ 
+@media only screen and (min-width: 600px) {
+
+    .textStyle {
+        width: 80%;
+    }
+
+    .infoContent {
+        flex-wrap: wrap;
+    }
+
+    .nameText h4{
+        font-size: 50px;
+        margin-left: 0px;
+        margin-right: 0px;
+        text-align: center;
+    }
+
+    .nameText p{
+        font-size: 24px;
+    }
+
+    .hobbiesList {
+        justify-content: center;
+    }
+
+    .skillsList {
+        justify-content: space-between;
+    }
+}
+ 
+@media only screen and (min-width: 768px) {
+
+    .infoContent {
+        flex-wrap: nowrap;
+    }
+    .nameText h4{
+        margin-left: 0px;
+        margin-right: 0px;
+        text-align: left;
+    }
+    .hobbiesList {
+        justify-content: space-between;
+    }
+}
+ 
+@media only screen and (min-width: 889px) {
+
+}
+ 
+@media only screen and (max-width: 1028px) {
+    .toolsList {
+        justify-content: center;
+    }
+}
+
+@media only screen and (min-width: 1200px) {
+
+    .toolsList {
+        justify-content: space-between;
+    }
+}
+
+@media only screen and (max-width: 1536px) {
+    .tools {
+        background-image: none;
+        background-color: #e7e7e7;
+        border: #000 solid 2px;
+        border-radius: 10px;
+        padding: 10px;
+    }
+
+    .toolsList {
+        padding: 0px;
+    }
+}
+
+@media only screen and (min-width: 1536px) {
+
+    .toolsList {
+        padding: 0px 70px 60px 0px;
+    }
+
+    .tools {
+        background-color: transparent;
+        border: none;
+        border-radius: 0%;
+        background-image: url("src/wrapper.svg");
+        background-repeat: no-repeat;    
+        background-size: 100% 100%;
+    
+        padding: 95px 20px 120px 20px;
+    }
 }
