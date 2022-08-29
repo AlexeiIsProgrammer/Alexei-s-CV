@@ -87,6 +87,7 @@ main > img {
     top: 240%;
     right: 15%;
     width: 8%;
+    z-index: 3;
 }
 
 .redRoundedWaves2 {
@@ -103,18 +104,22 @@ main > img {
     top: 220%;
     left: 15%;
     width: 13%;
+    z-index: 3;
 }
 
 .aLotOfDots2 {
     top: 290%;
     right: 25%;
     width: 8%;
+
+    z-index: 3;
 }
 
 .yellowTriangles2 {
     top: 280%;
     left: 13%;
     width: 5%;
+    z-index: 3;
 }
 
 .redTriangle2 {
@@ -128,7 +133,7 @@ main > img {
 }
 
 .angle {
-    top: 125%;
+    top : 125%;
     right: 5%;
 }
 
@@ -177,6 +182,51 @@ main > img {
     font-family: 'Poppins', sans-serif;
 }
 
+.textStyle h4._anim-items {
+    opacity: 0;
+    transform: translate(-100%, 0px);
+    transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+.textStyle h4._anim-items.active-anime{
+    opacity: 1;
+    transform: translate(0px, 0px);
+}
+
+.nameText > h4:first-child {
+    margin: 0px;
+    transform: translate(-100%, 0px);
+    opacity: 0;
+    transition: opacity 0.3s ease, transform 0.5s ease;
+} 
+
+.nameText > h4:first-child.active-anime {
+    transform: translate(0px, 0px);
+    opacity: 1;
+} 
+
+.nameText > h4:nth-child(2) {
+    transform: translate(100%, 0px);
+    opacity: 0;
+    transition: opacity 0.3s ease, transform 0.5s ease;
+} 
+
+.nameText > h4:nth-child(2).active-anime {
+    transform: translate(0px, 0px);
+    opacity: 1;
+} 
+
+.nameText > p.myPosition._anim-items {
+    transform: translate(0px, 20%);
+    opacity: 0;
+    transition: all 0.4s ease 0.6s;
+} 
+
+.nameText > p.myPosition._anim-items.active-anime {
+    transform: translate(0px, 0px);
+    opacity: 1;
+} 
+
 .textStyle .subtitle h4{
     font-size: 18px;
     color: #000;
@@ -191,6 +241,39 @@ main > img {
     font-size: 15px;
     font-weight: 400;
     font-family: 'Poppins', sans-serif;
+}
+
+.textStyle p._anim-items {
+    transform: translate(100%, 0px);
+    opacity: 0;
+    transition: opacity 0.3s ease, transform 0.5s ease;
+}
+
+.textStyle p._anim-items.active-anime {
+    transform: translate(0px, 0px);
+    opacity: 1;
+}
+
+.subtitle > p._anim-items{
+    transform: translate(50%, 0px);
+    opacity: 0;
+    transition: opacity 0.3s ease, transform 0.5s ease;
+}
+
+.subtitle > p._anim-items.active-anime{
+    transform: translate(0px, 0px);
+    opacity: 1;
+}
+
+.contacts div._anim-items {
+    transform: translate(60%, 0px);
+    opacity: 0;
+    transition: opacity 0.3s ease, transform 0.5s ease;
+}
+
+.contacts > div._anim-items.active-anime {
+    transform: translate(0px, 0px);
+    opacity: 1;
 }
 
 /**/
@@ -220,7 +303,6 @@ main > img {
 }
 
 .hobbiesList > div {
-
     width: auto;
     display: flex;
     flex-flow: column nowrap;
@@ -236,6 +318,28 @@ main > img {
     font-size: 17px;
 }
 
+.hobbiesList p._anim-items {
+    transform: translate(0px, 100%);
+    opacity: 0;
+    transition: opacity 0.5s ease, transform 0.7s ease;
+}
+
+.hobbiesList img._anim-items {
+    transform: scale(0);
+    opacity: 0;
+    transition: opacity 0.3s ease, transform 0.5s ease;
+}
+
+.hobbiesList p._anim-items.active-anime {
+    transform: translate(0px, 0px);
+    opacity: 1;
+}
+
+.hobbiesList img._anim-items.active-anime {
+    transform: scale(1);
+    opacity: 1;
+}
+
 /**/
 
 .skills {
@@ -245,7 +349,7 @@ main > img {
 .skillsList {
     display: flex;
     flex-flow: row wrap;
-    justify-content: space-between;
+    justify-content: left;
 }
 
 .skillsList > ul > li{
@@ -257,6 +361,17 @@ main > img {
 .skillsList > ul > li > p {
     font-size: 18px;
     
+}
+
+.skillsList._anim-items > ul > li > p {
+    transform: translate(200%, 0px );
+    opacity: 0;
+    transition: all 0.7s ease;
+}
+
+.skillsList._anim-items.active-anime > ul > li > p {
+    transform: translate(0px, 0px);
+    opacity: 1;
 }
 
 /**/
@@ -300,37 +415,43 @@ main > img {
     min-height: 100%;
 }
 
-.toolsList > .subtitle:nth-child(1) > .bar > .fillBar {
+.tools._anim-items > .toolsList > .subtitle > .bar > .fillBar {
+    width: 0%;
+    transition: width 2s ease-in-out;
+}
+
+.tools._anim-items.active-anime > .toolsList > .subtitle:nth-child(1) > .bar > .fillBar {
     width: 45%;
 }
 
-.toolsList > .subtitle:nth-child(2) > .bar > .fillBar {
+.tools._anim-items.active-anime > .toolsList > .subtitle:nth-child(2) > .bar > .fillBar._anim-items.active-anime {
     width: 80%;
 }
 
-.toolsList > .subtitle:nth-child(3) > .bar > .fillBar {
+.tools._anim-items.active-anime > .toolsList > .subtitle:nth-child(3) > .bar > .fillBar {
     width: 25%;
 }
 
-.toolsList > .subtitle:nth-child(4) > .bar > .fillBar {
+.tools._anim-items.active-anime > .toolsList > .subtitle:nth-child(4) > .bar > .fillBar {
     width: 70%;
 }
 
-.toolsList > .subtitle:nth-child(5) > .bar > .fillBar {
+.tools._anim-items.active-anime > .toolsList > .subtitle:nth-child(5) > .bar > .fillBar {
     width: 27%;
 }
 
-.toolsList > .subtitle:nth-child(6) > .bar > .fillBar {
+.tools._anim-items.active-anime > .toolsList > .subtitle:nth-child(6) > .bar > .fillBar {
     width: 50%;
 }
 
-.toolsList > .subtitle:nth-child(7) > .bar > .fillBar {
+.tools._anim-items.active-anime > .toolsList > .subtitle:nth-child(7) > .bar > .fillBar {
     width: 50%;
 }
 
-.toolsList > .subtitle:nth-child(8) > .bar > .fillBar {
+.tools._anim-items.active-anime > .toolsList > .subtitle:nth-child(8) > .bar > .fillBar {
     width: 60%;
 }
+
 
 /**/
 
@@ -351,6 +472,28 @@ main > img {
     justify-content: space-between;
     align-items: center;
     width: 60%;
+}
+
+.infoList._anim-items > div > div {
+    opacity: 0;
+    transform: translate(120%, 0px);
+    transition: all 0.7s ease;
+}
+
+.infoList._anim-items.active-anime > div > div {
+    opacity: 1;
+    transform: translate(0px, 0px);
+}
+
+.infoList._anim-items > div > p {
+    opacity: 0;
+    transform: translate(-120%, 0px);
+    transition: all 0.7s ease;
+}
+
+.infoList._anim-items.active-anime > div > p {
+    opacity: 1;
+    transform: translate(0px, 0px);
 }
 
 /**/
@@ -374,9 +517,31 @@ main > img {
     align-items: center;
 }
 
+.satodsan-uvemopag._anim-items {
+    overflow: hidden;
+    border-right: .17em solid gray;  
+    white-space: nowrap; 
+}
+
+.satodsan-uvemopag._anim-items.active-anime {
+    animation:  
+    typing 3s steps(30, end) forwards
+}
+
+@keyframes typing {
+    from { width: 0 }
+    99%{border-right: .17em solid gray}
+    to { width: 100%; border-right: .17em solid transparent;}
+}
+
 /**/
 
 @media only screen and (max-width: 600px) {
+
+    .toolsList > .subtitle > .bar {
+        max-width: 150px;
+        min-width: 150px;
+    }
 
     .textStyle {
         width: 80%;
@@ -391,7 +556,7 @@ main > img {
     }
 
     .skillsList {
-        justify-content: center;
+        justify-content: left;
     }
     
     .nameText h4{
@@ -406,6 +571,11 @@ main > img {
 }
  
 @media only screen and (min-width: 600px) {
+
+    .toolsList > .subtitle > .bar {
+        max-width: none;
+        min-width: 200px;
+    }
 
     .textStyle {
         width: 80%;
@@ -470,14 +640,37 @@ main > img {
 @media only screen and (max-width: 1536px) {
     .tools {
         background-image: none;
-        background-color: #e7e7e7;
-        border: #000 solid 2px;
-        border-radius: 10px;
-        padding: 10px;
+    }
+
+    .double-border {
+        background-color: rgb(255, 255, 255);
+        border: 4px solid rgb(0, 0, 0); 
+        position: relative;
+        padding: 10px 0px;
+        z-index: 0;
+        box-shadow: 30px 30px 0px 0px #000;
+    }
+
+    .double-border:before {
+        z-index: 0;
+        background: none;
+        border: 4px dotted rgb(0, 0, 0);
+        content: "";
+        display: block;
+        position: absolute;
+        top: 8px;
+        left: 8px;
+        right: 8px;
+        bottom: 8px;
+        pointer-events: none;
     }
 
     .toolsList {
         padding: 0px;
+    }
+
+    .satodsan-uvemopag {
+
     }
 }
 
@@ -496,5 +689,14 @@ main > img {
         background-size: 100% 100%;
     
         padding: 95px 20px 120px 20px;
+    }
+
+    .double-border {
+        box-shadow: none;
+        border: none;
+    }
+
+    .double-border:before {
+        border: none;
     }
 }
