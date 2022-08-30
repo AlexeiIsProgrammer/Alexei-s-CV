@@ -3,6 +3,7 @@
 * {
     margin: 0px;
     padding: 0px;
+   
 }
 
 body {
@@ -33,10 +34,44 @@ main {
     width: 90%;
 }
 
-.blueBlock {
+.yellowBlock {
+    position: relative;
+    height: 60px;
+}
+
+.yellowBlock > img{
+    position: absolute;
+    top: 50%;
+}
+
+#yellowBlockBlack._anim-items {
+    top: 60%;
+    left: 5%;
+    opacity: 0;
+
+    transition: all .5s ease;
+}
+
+#yellowBlockBlack._anim-items.active-anime {
+    top: 35%;
+    left: -5%;
+    opacity: 1;
+}
+
+.blueBlock{
     position: inherit;
     width: 90%;
     margin: 2rem 0rem 2rem 0rem;
+}
+
+.blueBlock._anim-items{
+
+    opacity: 0;
+    transition: opacity .4s ease;
+}
+
+.blueBlock._anim-items.active-anime{
+    opacity: 1;
 }
 
 main > img {
@@ -44,21 +79,63 @@ main > img {
     width: 10%;
 }
 
-.blueWaves {
+.blueWaves._anim-items {
     top: 30%;
+    left: -30%;
+
+    transition: all 1s ease-in-out;
+}
+
+.blueWaves._anim-items.active-anime {
     left: 0%;
 }
 
-.aLotOfDots {
+.aLotOfDots._anim-items {
     top: 75%;
     left: 8%;
     width: 5%;
+
+    transform: scale(0%, 0%);
+    
+    transition: all .7s ease;
+    
 }
 
-.yellowTriangles {
-    top: 70%;
+.aLotOfDots._anim-items.active-anime {
+    transform: scale(100%, 100%);
+    animation: .7s ease-in-out forwards rotatingDots;
+}
+
+@keyframes rotatingDots {
+    0% {
+        transform: rotate(-10deg);
+    }
+
+    75% {
+        transform: rotate(0deg);
+    }
+
+    75% {
+        transform: rotate(10deg);
+    }
+
+    100% {
+        transform: rotate(0deg);
+    }
+}
+
+.yellowTriangles._anim-items {
+    top: 50%;
     right: 12%;
     width: 5%;
+    opacity: 0;
+    
+    transition: all 1s ease-in-out;
+}
+
+.yellowTriangles._anim-items.active-anime {
+    top: 70%;
+    opacity: 1;
 }
 
 .redTriangle {
@@ -78,16 +155,47 @@ main > img {
 }
 
 .yellowVerticalBlock {
-    top: 160%;
-    left: 5%;
-    width: 8%;
+    width: 7%;  
+}
+
+.yellowVerticalBlock._anim-items{
+    top: 190%;
+    left: 7%;
+
+    transition: top 1s ease, left 1s ease;
+}
+
+.yellowVerticalBlock._anim-items.active-anime{
+    top: 181%;
+    left: 11%;
+}
+
+.yellowVerticalBlockBlack{
+    left:10%;
+    top: 183%;
 }
 
 .yellowVerticalBlock2 {
-    top: 240%;
-    right: 15%;
     width: 8%;
-    z-index: 3;
+    
+}
+
+.yellowVerticalBlock2._anim-items{
+    top: 238%;
+    right: 15%;
+    z-index:1;
+    transition: top 1s ease, right 1s ease;
+}
+
+.yellowVerticalBlock2._anim-items.active-anime{
+    top: 247%;
+    right: 18%;
+}
+
+.yellowVerticalBlockBlack2{
+    z-index:2;
+    top: 243%;
+    right: 17%;
 }
 
 .redRoundedWaves2 {
@@ -115,11 +223,20 @@ main > img {
     z-index: 3;
 }
 
-.yellowTriangles2 {
-    top: 280%;
+.yellowTriangles2._anim-items{
+    top: 260%;
+    opacity: 0;
+
     left: 13%;
     width: 5%;
     z-index: 3;
+
+    transition: top .5s ease, opacity .5s ease;
+}
+
+.yellowTriangles2._anim-items.active-anime{
+    top: 280%;
+    opacity: 1;
 }
 
 .redTriangle2 {
@@ -452,7 +569,6 @@ main > img {
     width: 60%;
 }
 
-
 /**/
 
 .personalInfo {
@@ -524,14 +640,13 @@ main > img {
 }
 
 .satodsan-uvemopag._anim-items.active-anime {
-    animation:  
-    typing 3s steps(30, end) forwards
+    animation: typing 3s steps(30, end) forwards;
 }
 
 @keyframes typing {
     from { width: 0 }
     99%{border-right: .17em solid gray}
-    to { width: 100%; border-right: .17em solid transparent;}
+    to { width: 60%; border-right: .17em solid transparent;}
 }
 
 /**/
@@ -628,6 +743,16 @@ main > img {
     .toolsList {
         justify-content: center;
     }
+
+    .satodsan-uvemopag._anim-items {
+        white-space: normal;
+    }
+}
+
+@media only screen and (min-width: 1028px) {
+    .satodsan-uvemopag._anim-items {
+        white-space: nowrap;
+    }
 }
 
 @media only screen and (min-width: 1200px) {
@@ -669,9 +794,6 @@ main > img {
         padding: 0px;
     }
 
-    .satodsan-uvemopag {
-
-    }
 }
 
 @media only screen and (min-width: 1536px) {
@@ -698,5 +820,9 @@ main > img {
 
     .double-border:before {
         border: none;
+    }
+
+    .satodsan-uvemopag._anim-items {
+        white-space: nowrap;
     }
 }
