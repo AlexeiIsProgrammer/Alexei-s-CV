@@ -3,7 +3,7 @@
 * {
     margin: 0px;
     padding: 0px;
-   
+    
 }
 
 body {
@@ -42,6 +42,18 @@ main {
 .yellowBlock > img{
     position: absolute;
     top: 50%;
+}
+
+.yellowBlock > img:first-child._anim-items{
+    position: absolute;
+    top: 50%;
+
+    opacity: 0;
+    transition: opacity .5s ease;
+}
+
+.yellowBlock > img:first-child._anim-items.active-anime{
+    opacity: 1;
 }
 
 #yellowBlockBlack._anim-items {
@@ -103,25 +115,6 @@ main > img {
 
 .aLotOfDots._anim-items.active-anime {
     transform: scale(100%, 100%);
-    animation: .7s ease-in-out forwards rotatingDots;
-}
-
-@keyframes rotatingDots {
-    0% {
-        transform: rotate(-10deg);
-    }
-
-    75% {
-        transform: rotate(0deg);
-    }
-
-    75% {
-        transform: rotate(10deg);
-    }
-
-    100% {
-        transform: rotate(0deg);
-    }
 }
 
 .yellowTriangles._anim-items {
@@ -138,18 +131,53 @@ main > img {
     opacity: 1;
 }
 
-.redTriangle {
+.redTriangle._anim-items {
+    right: 3%;
+    top: 20%;
+
+    opacity: 0;
+    transform: scale(0%, 0%);
+    transition: opacity .5s ease, transform .5s ease;
+
+}
+
+.redTriangle._anim-items.active-anime {
+    transform: scale(100%, 100%);
+    opacity: 1;
+}
+
+.redTriangle.borderTriangle._anim-items {
+    right: 10%;
+    width: 10%;
+
+    transition: right .5s ease, top .5s ease;
+}
+
+.redTriangle.borderTriangle._anim-items.active-anime {
     right: 0%;
-    top: 20%
+    top: 13%;
 }
 
-.redWaves {
+.redWaves._anim-items{
     top: 180%;
-    right: 13%;
+    right: 23%;
     width: 13%;
+
+    transition: right .5s ease;
 }
 
-.redRoundedWaves {
+.redWaves._anim-items.active-anime {
+    right: 13%;
+}
+
+.redRoundedWaves._anim-items {
+    top: 135%;
+    left: -10%;
+
+    transition: left .5s ease;
+}
+
+.redRoundedWaves._anim-items.active-anime {
     top: 135%;
     left: 5%;
 }
@@ -198,29 +226,57 @@ main > img {
     right: 17%;
 }
 
-.redRoundedWaves2 {
+.redRoundedWaves2._anim-items {
+    top: 340%;
+    left: -10%;
+
+    transition: left .5s ease;
+}
+
+.redRoundedWaves2._anim-items.active-anime {
     top: 340%;
     left: 5%;
 }
 
-.blueWaves2 {
+.blueWaves2._anim-items {
     top: 370%;
+    right: 20%;
+
+    transition: right .5s ease;
+}
+
+.blueWaves2._anim-items.active-anime {
     right: 10%;
 }
 
-.redWaves2 {
+.redWaves2._anim-items {
     top: 220%;
-    left: 15%;
+    left: 35%;
     width: 13%;
     z-index: 3;
+
+    transition: left .5s ease;
 }
 
-.aLotOfDots2 {
+.redWaves2._anim-items.active-anime {
+    left: 15%;
+}
+
+.aLotOfDots2._anim-items {
     top: 290%;
     right: 25%;
     width: 8%;
 
     z-index: 3;
+
+    transform: scale(0%, 0%);
+    
+    transition: all .5s ease;
+
+}
+
+.aLotOfDots2._anim-items.active-anime {
+    transform: scale(100%, 100%);
 }
 
 .yellowTriangles2._anim-items{
@@ -239,19 +295,80 @@ main > img {
     opacity: 1;
 }
 
-.redTriangle2 {
+.redTriangle2._anim-items {
     left: 5%;
-    top: 370%
+    top: 370%;
+
+    transform: scale(0%, 0%);
+    opacity: 0;
+    transition: opacity .5s ease, transform .5s ease;
 }
 
-.angle2 {
+.redTriangle2._anim-items.active-anime {
+    transform: scale(100%, 100%);
+    opacity: 1;
+}
+
+.redTriangle2.borderTriangle._anim-items {
+    left: -10%;
+    top: 363%;
+    width: 10%;
+
+    transition: left .5s ease, top .5s ease;
+}
+
+.redTriangle2.borderTriangle._anim-items.active-anime {
+    left: 7%;
+}
+
+.angle2._anim-items{
     top: 330%;
     right: 5%;
+
+    opacity: 0;
+    transition: opacity .5s ease;
 }
 
-.angle {
+
+.angle2._anim-items.active-anime{    
+    opacity: 1;
+}
+
+.angle2.blackAngle._anim-items {
+    
+    top: 328%;
+    right: 3%;
+    transition: all 0.5s ease;
+}
+
+.angle2.blackAngle._anim-items.active-anime {
+    top: 332%;
+    right: 7%;
+}
+
+.angle._anim-items{
     top : 125%;
     right: 5%;
+
+    opacity: 0;
+    transition: opacity .5s ease;
+}
+
+
+.angle._anim-items.active-anime{    
+    opacity: 1;
+}
+
+.angle.blackAngle._anim-items {
+    top : 127%;
+    right: 3%;
+
+    transition: all 0.5s ease;
+}
+
+.angle.blackAngle._anim-items.active-anime {
+    top : 123%;
+    right: 7%;
 }
 
 .toolsPos {
@@ -361,7 +478,7 @@ main > img {
 }
 
 .textStyle p._anim-items {
-    transform: translate(100%, 0px);
+    transform: translate(20%, 0px);
     opacity: 0;
     transition: opacity 0.3s ease, transform 0.5s ease;
 }
@@ -534,7 +651,7 @@ main > img {
 
 .tools._anim-items > .toolsList > .subtitle > .bar > .fillBar {
     width: 0%;
-    transition: width 2s ease-in-out;
+    transition: width 1s ease-in-out;
 }
 
 .tools._anim-items.active-anime > .toolsList > .subtitle:nth-child(1) > .bar > .fillBar {
@@ -637,6 +754,7 @@ main > img {
     overflow: hidden;
     border-right: .17em solid gray;  
     white-space: nowrap; 
+
 }
 
 .satodsan-uvemopag._anim-items.active-anime {
@@ -644,9 +762,9 @@ main > img {
 }
 
 @keyframes typing {
-    from { width: 0 }
+    from { width: 0% }
     99%{border-right: .17em solid gray}
-    to { width: 60%; border-right: .17em solid transparent;}
+    to { width: 100%; border-right: .17em solid transparent; white-space: normal;}
 }
 
 /**/
@@ -681,8 +799,6 @@ main > img {
     .nameText p{
         font-size: 20px;
     }
-    
-    
 }
  
 @media only screen and (min-width: 600px) {
@@ -745,7 +861,7 @@ main > img {
     }
 
     .satodsan-uvemopag._anim-items {
-        white-space: normal;
+        white-space: nowrap;
     }
 }
 

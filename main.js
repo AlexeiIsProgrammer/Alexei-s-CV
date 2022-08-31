@@ -2,29 +2,28 @@ document.addEventListener('DOMContentLoaded', () => {
 	const scrollItems = document.querySelectorAll('._anim-items');
 
 	const scrollAnimation = () => {
-		let windowCenter = (window.innerHeight) + window.scrollY;
+		let windowCenter = (window.innerHeight ) + window.scrollY;
 		scrollItems.forEach(el => {
-			let scrollOffset = el.offsetTop + (el.offsetHeight / 4);
+			let scrollOffset = el.offsetTop + (el.offsetHeight / 2);
 			if (windowCenter >= scrollOffset) {
 				el.classList.add('active-anime');
 			} else {
 				el.classList.remove('active-anime');
 			}
+
+			el.addEventListener('mouseover', function () {
+				this.classList.remove('active-anime');
+				setTimeout(()=>{
+					this.classList.add('active-anime');
+				}, 1000);
+			})
 		});
 	};
     setTimeout(() => {
         scrollAnimation();    
-    }, 300);
+    }, 400);
 	
 	window.addEventListener('scroll', () => {
 		scrollAnimation();
 	});
 });
-
-// const el = document.querySelectorAll(".tools");
-
-// setInterval(() => {
-//     el.forEach(el => {
-//         console.log(el.offsetTop);
-//     });
-// }, 1000);
