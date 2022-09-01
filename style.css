@@ -27,17 +27,19 @@ main {
 /**/
 
 .textStyle img {
-    width: 60%;
+    min-width: 5%;
 }
 
 .textStyle .yellowBlock {
-    width: 90%;
-}
-
-.yellowBlock {
+    min-width: 90%;
     position: relative;
     height: 60px;
 }
+
+.textStyle .yellowBlock img {
+    min-width: 50%;
+}
+
 
 .yellowBlock > img{
     position: absolute;
@@ -72,12 +74,14 @@ main {
 
 .blueBlock{
     position: inherit;
-    width: 90%;
+
+    max-width: 100%;
+    min-width:90%;
+
     margin: 2rem 0rem 2rem 0rem;
 }
 
 .blueBlock._anim-items{
-
     opacity: 0;
     transition: opacity .4s ease;
 }
@@ -87,11 +91,14 @@ main {
 }
 
 main > img {
+    min-width: 7%;
     position: absolute;
-    width: 10%;
 }
 
 .blueWaves._anim-items {
+    max-width: 70%;
+    min-width: 15%;
+
     top: 30%;
     left: -30%;
 
@@ -103,9 +110,10 @@ main > img {
 }
 
 .aLotOfDots._anim-items {
+    min-width: 10%;
+
     top: 75%;
     left: 8%;
-    width: 5%;
 
     transform: scale(0%, 0%);
     
@@ -132,6 +140,8 @@ main > img {
 }
 
 .redTriangle._anim-items {
+    min-width: 10%;
+
     right: 3%;
     top: 20%;
 
@@ -205,7 +215,6 @@ main > img {
 
 .yellowVerticalBlock2 {
     width: 8%;
-    
 }
 
 .yellowVerticalBlock2._anim-items{
@@ -298,7 +307,7 @@ main > img {
 .redTriangle2._anim-items {
     left: 5%;
     top: 370%;
-
+    width: 10%;
     transform: scale(0%, 0%);
     opacity: 0;
     transition: opacity .5s ease, transform .5s ease;
@@ -462,6 +471,7 @@ main > img {
 } 
 
 .textStyle .subtitle h4{
+    min-width: 100px;
     font-size: 18px;
     color: #000;
     margin-top: 10px;
@@ -475,6 +485,11 @@ main > img {
     font-size: 15px;
     font-weight: 400;
     font-family: 'Poppins', sans-serif;
+}
+
+.personalInfo p {
+    min-width: 200px;
+    margin-left: 10px;
 }
 
 .textStyle p._anim-items {
@@ -548,7 +563,8 @@ main > img {
 }
 
 .hobbiesList > div > img {
-    max-width: 200px;
+    max-width: 150px;
+    min-width: 50px;
     font-size: 17px;
 }
 
@@ -638,7 +654,7 @@ main > img {
 
 .bar {
     position: relative;
-    min-width: 200px;
+    min-width: 100px;
     min-height: 10px;
     border: 3px solid black;
 }
@@ -773,7 +789,7 @@ main > img {
 
     .toolsList > .subtitle > .bar {
         max-width: 150px;
-        min-width: 150px;
+        min-width: 120px;
     }
 
     .textStyle {
@@ -798,6 +814,14 @@ main > img {
 
     .nameText p{
         font-size: 20px;
+    }
+
+    .redTriangle._anim-items {
+        top:5%;
+    }
+
+    .redTriangle2._anim-items {
+        top: 365%;
     }
 }
  
@@ -834,6 +858,14 @@ main > img {
     .skillsList {
         justify-content: space-between;
     }
+
+    .redTriangle._anim-items {
+        top:15%;
+    }
+
+    .redTriangle2._anim-items {
+        top: 366%;
+    }
 }
  
 @media only screen and (min-width: 768px) {
@@ -849,10 +881,11 @@ main > img {
     .hobbiesList {
         justify-content: space-between;
     }
+    
+    
 }
  
 @media only screen and (min-width: 889px) {
-
 }
  
 @media only screen and (max-width: 1028px) {
@@ -863,11 +896,19 @@ main > img {
     .satodsan-uvemopag._anim-items {
         white-space: nowrap;
     }
+
+    .redTriangle._anim-items {
+        top:15%;
+    }
 }
 
 @media only screen and (min-width: 1028px) {
     .satodsan-uvemopag._anim-items {
         white-space: nowrap;
+    }
+
+    .redTriangle._anim-items {
+        top:20%;
     }
 }
 
