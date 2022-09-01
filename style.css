@@ -474,7 +474,7 @@ main > img {
     min-width: 100px;
     font-size: 18px;
     color: #000;
-    margin-top: 10px;
+    margin-top: 0px;
     margin-bottom: 0px;
     font-weight: 700;
     font-family: 'Poppins', sans-serif;
@@ -716,6 +716,7 @@ main > img {
 }
 
 .infoList > div {
+    margin-top: 10px;
     display: flex;
     flex-flow: row nowrap;
     justify-content: space-between;
