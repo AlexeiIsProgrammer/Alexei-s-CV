@@ -25,11 +25,6 @@ main {
 }
 
 /**/
-
-.textStyle img {
-    min-width: 5%;
-}
-
 .textStyle .yellowBlock {
     min-width: 90%;
     position: relative;
@@ -39,7 +34,6 @@ main {
 .textStyle .yellowBlock img {
     min-width: 50%;
 }
-
 
 .yellowBlock > img{
     position: absolute;
@@ -90,26 +84,26 @@ main {
     opacity: 1;
 }
 
-main > img {
+main > img { /*Убрать потом*/
     min-width: 7%;
     position: absolute;
 }
 
 .blueWaves._anim-items {
+    position: absolute;
     max-width: 70%;
     min-width: 15%;
-
-    top: 30%;
-    left: -30%;
+    left: -100%;
 
     transition: all 1s ease-in-out;
 }
 
 .blueWaves._anim-items.active-anime {
-    left: 0%;
+    left: -20%;
 }
 
 .aLotOfDots._anim-items {
+   position: absolute;
     min-width: 10%;
 
     top: 75%;
@@ -388,33 +382,37 @@ main > img {
 /**/
 
 .infoContent {
-    width: 80%;
+    position: relative;
+    width: 100%;
     display: flex;
-    flex-direction: row;
-    align-items: flex-end;
+    flex-flow: column nowrap;
     justify-content: space-between;
+}
+
+.infoContent > div{
+    display: flex;
+    flex-flow: row wrap;
+}
+
+.infoContent > div > div{
+    width: 50%;
+    margin: 10px 30px 10px 0px;
 }
 
 .contacts > div {
     display: flex;
-    flex-flow: row wrap;
+    flex-flow: row wrap; 
     align-items: center;
 
     margin-top: 1rem;
 }
 
 .contacts > div > img {
-    width: 5%;
+    width: 3%;
 }
 
 .textStyle {
-    padding: 20px;
-    width: 40%;
-    box-sizing: border-box;
-}
-
-.textStyle > div {
-    margin: 20px 0px 20px 0px;
+    margin: 20px 0px;
 }
 
 .textStyle h4{
@@ -434,6 +432,10 @@ main > img {
 .textStyle h4._anim-items.active-anime{
     opacity: 1;
     transform: translate(0px, 0px);
+}
+
+.nameText {
+    position: relative;
 }
 
 .nameText > h4:first-child {
@@ -548,7 +550,7 @@ main > img {
     display: flex;
     flex-flow: row wrap;
     align-items: center;
-    justify-content: space-between;
+    justify-content: space-between; 
 }
 
 .hobbiesList > div {
@@ -766,22 +768,20 @@ main > img {
     flex-flow: column nowrap;   
     align-items: center;
 }
-
-.satodsan-uvemopag._anim-items {
-    overflow: hidden;
-    border-right: .17em solid gray;  
-    white-space: nowrap; 
-
+    
+.satodsan-uvemopag {
+    white-space: normal;
 }
 
-.satodsan-uvemopag._anim-items.active-anime {
-    animation: typing 3s steps(30, end) forwards;
+span {
+    border-right: .05em solid;
+    animation: caret 1s steps(1) infinite;
 }
 
-@keyframes typing {
-    from { width: 0% }
-    99%{border-right: .17em solid gray}
-    to { width: 100%; border-right: .17em solid transparent; white-space: normal;}
+@keyframes caret {
+    50% {
+        border-color: transparent;
+    }
 }
 
 /**/
@@ -790,15 +790,22 @@ main > img {
 
     .toolsList > .subtitle > .bar {
         max-width: 150px;
-        min-width: 120px;
+        min-width: 150px;
     }
 
     .textStyle {
         width: 80%;
     }
 
-    .infoContent {
+    .infoContent > div{
         flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .infoContent > div > div{
+        flex-wrap: wrap;
+        width: 100%;
+        justify-content: center;
     }
 
     .hobbiesList {
@@ -824,6 +831,14 @@ main > img {
     .redTriangle2._anim-items {
         top: 365%;
     }
+
+    .hobbiesList {
+        justify-content: center;
+    }
+
+    main {
+        width: 100%;
+    }
 }
  
 @media only screen and (min-width: 600px) {
@@ -837,8 +852,15 @@ main > img {
         width: 80%;
     }
 
-    .infoContent {
+    .infoContent > div{
         flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .infoContent > div > div{
+        flex-wrap: wrap;
+        width: 100%;
+        justify-content: center;
     }
 
     .nameText h4{
@@ -848,12 +870,12 @@ main > img {
         text-align: center;
     }
 
-    .nameText p{
-        font-size: 24px;
+    .hobbiesList {
+        justify-content: space-between;
     }
 
-    .hobbiesList {
-        justify-content: center;
+    .nameText p{
+        font-size: 24px;
     }
 
     .skillsList {
@@ -867,12 +889,22 @@ main > img {
     .redTriangle2._anim-items {
         top: 366%;
     }
+
+    main {
+        width: 100%;
+    }
 }
  
 @media only screen and (min-width: 768px) {
 
-    .infoContent {
+    .infoContent > div {
         flex-wrap: nowrap;
+    }
+
+    .infoContent > div > div{
+        flex-wrap: nowrap;
+        width: 50%;
+        justify-content: space-between;
     }
     .nameText h4{
         margin-left: 0px;
@@ -882,20 +914,20 @@ main > img {
     .hobbiesList {
         justify-content: space-between;
     }
-    
+
+    main {
+        width: 80%;
+    }
     
 }
  
 @media only screen and (min-width: 889px) {
+
 }
  
 @media only screen and (max-width: 1028px) {
     .toolsList {
         justify-content: center;
-    }
-
-    .satodsan-uvemopag._anim-items {
-        white-space: nowrap;
     }
 
     .redTriangle._anim-items {
@@ -904,9 +936,6 @@ main > img {
 }
 
 @media only screen and (min-width: 1028px) {
-    .satodsan-uvemopag._anim-items {
-        white-space: nowrap;
-    }
 
     .redTriangle._anim-items {
         top:20%;
@@ -978,9 +1007,5 @@ main > img {
 
     .double-border:before {
         border: none;
-    }
-
-    .satodsan-uvemopag._anim-items {
-        white-space: nowrap;
     }
 }
