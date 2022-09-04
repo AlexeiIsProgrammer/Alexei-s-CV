@@ -19,7 +19,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
 				if(el.classList.contains('satodsan-uvemopag')){
 					isEndGTyping = true;
-					StartTextAnimation(dataText.length + 1);
 				}
 			}
 
@@ -36,20 +35,22 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 
-
 function typeWriter(text, i, fnCallback) {
 
-	if (i < text.length) {
+	if(isEndGTyping){
+		return;
+	}
+	else if (i < text.length) {
 
 	document.querySelector(".satodsan-uvemopag").innerHTML = text.substring(0, i+1);
 
 	setTimeout(function() {
 		typeWriter(text, i + 1, fnCallback)
-	}, 100);
+	}, 30);
 	}
 
 	else if (typeof fnCallback == 'function') {
-	setTimeout(fnCallback, 700);
+		return;	
 	}
 }
 
