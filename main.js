@@ -22,8 +22,17 @@ document.addEventListener('DOMContentLoaded', () => {
 				}
 			}
 
+			if(el.parentElement.classList.contains('relativeFigures')) {
+				el.addEventListener('mouseover', function () {
+					this.classList.remove('active-anime');
+					setTimeout(()=>{
+						this.classList.add('active-anime');
+					}, 1000);
+				})
+			}
 			
 		});
+
 	};
     setTimeout(() => {
         scrollAnimation();    
