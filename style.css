@@ -137,7 +137,6 @@ main {
     opacity: 0;
     transform: scale(0%, 0%);
     transition: opacity .5s ease, transform .5s ease;
-
 }
 
 .redTriangle._anim-items.active-anime { 
@@ -156,7 +155,7 @@ main {
     top: -10px;
 }
 
-.skills._anim-items > .relativeFigures > .redWaves{
+.redWaves._anim-items{
     position: absolute;
     top: 0%;
     right: -20%;
@@ -165,11 +164,11 @@ main {
     transition: right .5s ease;
 }
 
-.skills._anim-items.active-anime > .relativeFigures > .redWaves {
+.redWaves._anim-items.active-anime {
     right: -13%;
 }
 
-.hobbies._anim-items > .relativeFigures > .redRoundedWaves {
+.redRoundedWaves._anim-items {
     position: absolute;
     width: 15%;
     top: 20px;
@@ -178,7 +177,7 @@ main {
     transition: left .5s ease;
 }
 
-.hobbies._anim-items.active-anime > .relativeFigures > .redRoundedWaves {
+.redRoundedWaves._anim-items.active-anime {
     top: 30px;
     left: -20%;
 }
@@ -188,14 +187,14 @@ main {
     width: 7%;  
 }
 
-.skills._anim-items > .relativeFigures > .yellowVerticalBlock:first-child {
+.yellowVerticalBlock._anim-items{
     top: 0px;
     left: -13%;
 
     transition: top 1s ease, left 1s ease;
 }
 
-.skills._anim-items.active-anime > .relativeFigures > .yellowVerticalBlock:first-child {
+.yellowVerticalBlock._anim-items.active-anime{
     top: -30px;
     left: -17%;
 }
@@ -213,12 +212,12 @@ main {
     top: 510px;
 }
 
-.skills._anim-items > .relativeFigures > .yellowVerticalBlock2:first-child{
+.yellowVerticalBlock2._anim-items{
     right: -8%;
     transition: top 1s ease, right 1s ease;
 }
 
-.skills._anim-items.active-anime > .relativeFigures > .yellowVerticalBlock2:first-child{
+.yellowVerticalBlock2._anim-items.active-anime{
     top: 480px;
     right: -2%;
 }
@@ -229,7 +228,7 @@ main {
     right: -3%;
 }
 
-.declaration._anim-items> .relativeFigures > .redRoundedWaves2 {
+.redRoundedWaves2._anim-items {
     position: absolute;
     width: 15%;
     left: -50%;
@@ -237,11 +236,11 @@ main {
     transition: left .5s ease;
 }
 
-.declaration._anim-items.active-anime> .relativeFigures > .redRoundedWaves2 {
+.redRoundedWaves2._anim-items.active-anime {
     left: -20%;
 }
 
-.declaration._anim-items> .relativeFigures > .blueWaves2 {
+.blueWaves2._anim-items {
     position: absolute;
     width: 20%;
 
@@ -251,11 +250,11 @@ main {
     transition: right .5s ease;
 }
 
-.declaration._anim-items.active-anime> .relativeFigures > .blueWaves2 {
+.blueWaves2._anim-items.active-anime {
     right: -20%;
 }
 
-.skills._anim-items > .relativeFigures > .redWaves2 {
+.redWaves2._anim-items {
     z-index: 2;
     position: absolute;
     top: 280px;
@@ -265,11 +264,11 @@ main {
     transition: left .5s ease;
 }
 
-.skills._anim-items.active-anime > .relativeFigures > .redWaves2 {
+.redWaves2._anim-items.active-anime {
     left: -10%;
 }
 
-.personalInfo._anim-items > .relativeFigures > .aLotOfDots2 {
+.aLotOfDots2._anim-items{
     position: absolute;
 
     top: 0px;
@@ -280,11 +279,11 @@ main {
     transition: all .5s ease;
 }
 
-.personalInfo._anim-items.active-anime > .relativeFigures > .aLotOfDots2 {
+.aLotOfDots2._anim-items.active-anime{
     transform: scale(100%, 100%);
 }
 
-.personalInfo._anim-items > .relativeFigures > .yellowTriangles2{
+.yellowTriangles2._anim-items{
     position: absolute;
 
     top: 0px;
@@ -296,12 +295,12 @@ main {
     transition: top .5s ease, opacity .5s ease;
 }
 
-.personalInfo._anim-items.active-anime > .relativeFigures > .yellowTriangles2{
+.yellowTriangles2._anim-items.active-anime{
     top: -60px;
     opacity: 1;
 }
 
-.declaration._anim-items> .relativeFigures > .redTriangle2 {
+.redTriangle2._anim-items {
     position: absolute;
 
     left: -20%;
@@ -312,12 +311,12 @@ main {
     transition: opacity .5s ease, transform .5s ease;
 }
 
-.declaration._anim-items.active-anime > .relativeFigures > .redTriangle2 {
+.redTriangle2._anim-items.active-anime {
     transform: scale(100%, 100%);
     opacity: 1;
 }
 
-.declaration._anim-items> .relativeFigures > .redTriangle2.borderTriangle {
+.redTriangle2.borderTriangle._anim-items {
     left: -30%;
     top: -10px;
     width: 10%;
@@ -325,11 +324,11 @@ main {
     transition: left .5s ease, top .5s ease;
 }
 
-.declaration._anim-items.active-anime> .relativeFigures > .redTriangle2.borderTriangle {
+.redTriangle2.borderTriangle._anim-items.active-anime {
     left: -17%;
 }
 
-.declaration._anim-items> .relativeFigures > .angle2{
+.angle2._anim-items{
     position: absolute;
     width: 10%;
 
@@ -341,22 +340,22 @@ main {
 }
 
 
-.declaration._anim-items.active-anime> .relativeFigures > .angle2{    
+.angle2._anim-items.active-anime {    
     opacity: 1;
 }
 
-.declaration._anim-items> .relativeFigures > .angle2.blackAngle {
+.angle2.blackAngle._anim-items{
     top: 20px;
     right: -19%;
     transition: all 0.5s ease;
 }
 
-.declaration._anim-items.active-anime> .relativeFigures > .angle2.blackAngle {
+.angle2.blackAngle._anim-items.active-anime {
     top: -10px;
     right: -16%;
 }
 
-.angle._anim-items{
+.angle._anim-items {
     position: absolute;
     right: -10%;
     top: 50px;
@@ -366,8 +365,7 @@ main {
     transition: opacity .5s ease;
 }
 
-
-.angle._anim-items.active-anime{    
+.angle._anim-items.active-anime {
     opacity: 1;
 }
 
@@ -873,6 +871,10 @@ span {
     main {
         width: 100%;
     }
+
+    .nameText p{
+        margin-left: 0;
+    }
 }
  
 @media only screen and (min-width: 600px) {
@@ -926,6 +928,10 @@ span {
 
     main {
         width: 100%;
+    }
+
+    .nameText p{
+        margin-left: -60;
     }
 }
  
