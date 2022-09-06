@@ -644,33 +644,32 @@ main {
     display: flex;
     flex-flow: column nowrap;
     align-items: center;
+    padding: 20px 0px 20px 0px;
 }
 
 .double-border {
-    background-color: rgb(255, 255, 255);
-    /* border: 4px solid rgb(0, 0, 0);  */
-    position: relative;
-    padding: 10px 0px;
-    z-index: 0;
-    /* box-shadow: 30px 30px 0px 0px #000; */
-    border-left: #000 solid 4px;
-    border-top: #000 solid 4px;
+  border-style:solid;
+  border-image: url('/src/bdr.svg') 20 / 30px stretch;
 
-    border-right: #000 double 50px;
-    border-bottom: #000 double 50px;
+  border-image-slice: 50 48 50 50;
+  border-image-outset: 1em;
+  border-image-width: 35;
+  /* width: 16em;
+  height: 16em; */
+  position: relative;
+  margin: 0 auto;
 }
 
 .double-border:before {
-    z-index: 0;
-    background: none;
-    border: 4px dotted rgb(0, 0, 0);
-    display: block;
-    position: absolute;
-    top: 8px;
-    left: 8px;
-    right: 8px;
-    bottom: 8px;
-    pointer-events: none;
+  border: 4px dotted #000;
+  content: "";
+  display: block;
+  position: absolute;
+  top: 4px;
+  left: 4px;
+  right: 90px;
+  bottom: 70px;
+  pointer-events: none;
 }
 
 .toolsList {
@@ -678,8 +677,6 @@ main {
     display: flex;
     justify-content: space-between;
     flex-flow: row wrap;
-
-    padding: 0px 70px 60px 0px;
 }
 
 .toolsList > div {
@@ -989,9 +986,16 @@ span {
     }
 }
 
-@media only screen and (max-width: 1536px) {
+@media only screen and (max-width: 1535px) {
     .toolsList {
-        padding: 0px;
+        padding: 0px 30px 20px 0px;
+    }
+    .tools {
+        padding: 20px 75px 70px 10px;
+    }
+
+    .double-border {
+        border-image-width: 40;
     }
 }
 
