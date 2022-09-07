@@ -1,3 +1,8 @@
+var image = document.querySelectorAll('.relativeFigures > img');
+new simpleParallax(image, {
+	scale: 1.5,
+});
+
 let isEndGTyping = true;
 let dataText = "I believe that I'll be able to make great things in the nearest future!";
 
@@ -12,8 +17,8 @@ document.addEventListener('DOMContentLoaded', () => {
 		scrollItems.forEach(el => {
 			let scrollOffset;
 			
-			if(el.parentElement.classList.contains('relativeFigures')) {
-				//console.log('Top:' + el.getBoundingClientRect().top + '---' + 'Height:' +el.offsetHeight);
+			if(el.parentElement.classList.contains('simpleParallax')) {
+				console.log('Top:' + el.getBoundingClientRect().top + '---' + 'Height:' +el.offsetHeight);
 				scrollOffset = el.getBoundingClientRect().top + (el.offsetHeight * 2); //Поиграться со значениями, основную штуку зробил
 			}
 			else {
