@@ -17,7 +17,7 @@ document.addEventListener('DOMContentLoaded', () => {
 			let scrollOffset;
 			
 			if(el.parentElement.classList.contains('simpleParallax')) {
-				console.log('Top:' + el.getBoundingClientRect().top + '---' + 'Height:' +el.offsetHeight);
+				//console.log('Top:' + el.getBoundingClientRect().top + '---' + 'Height:' +el.offsetHeight);
 				scrollOffset = el.getBoundingClientRect().top + (el.offsetHeight * 3); //Поиграться со значениями, основную штуку зробил
 			}
 			else {
@@ -89,6 +89,18 @@ function StartTextAnimation(i) {
 	}
 }
 
+const getMain = document.querySelector('main');
+
+window.addEventListener('resize', function(event) {
+	console.log(this.screen.width);
+    if(this.screen.width <= 768) {
+		getMain.classList.remove('letter');
+	}
+	else {
+		getMain.classList.add('letter');
+	}
+}, true);
+
 // const textElements = document.querySelectorAll(".textStyle");
 
 // textElements.forEach(el => {
@@ -103,22 +115,26 @@ function StartTextAnimation(i) {
 // 	}
 // });
 
-const relativeFigures = document.querySelectorAll('.simpleParallax > img');
-let isStart = true;
-setInterval(() => {
-	if(isStart) {
-		relativeFigures.forEach(el => {
-			el.classList.add('.translatingFigures');
-		});
 
-		isStart = false;
-	}
-	else {
-		relativeFigures.forEach(el => {
-			el.classList.remove('.translatingFigures');
-		});
 
-		isStart = true;
-	}
-}, 750);
+// const relativeFigures = document.querySelectorAll('.simpleParallax > img');
+// let isStart = true;
+// setInterval(() => {
+// 	if(isStart) {
+// 		relativeFigures.forEach(el => {
+// 			el.classList.add('.translatingFigures');
+// 		});
+
+// 		isStart = false;
+// 	}
+// 	else {
+// 		relativeFigures.forEach(el => {
+// 			el.classList.remove('.translatingFigures');
+// 		});
+
+// 		isStart = true;
+// 	}
+// }, 750);
+
+
 
