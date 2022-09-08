@@ -23,79 +23,15 @@ main {
     width: 80%;
     background-color: #fff;
 }
-/**/
 
-.item {
-    transform-style: preserve-3d;
-    
-    perspective: 0.055px;
-    perspective-origin: 50% 100%;
-    
-    margin-top: 8vh;
-    margin-bottom: 8vh;
-  }
-  
-  .item, .card, .shadow {
-    height: 25vh;
-    max-height: 200px;
-  }
-  
-  
-  .card {
-    width: 100%;
-  }
-  
-  .card::after, .shadow {
-    width: 85vw;
-    max-width: 600px;
-  }
-  
-  .card:after {
-    border-radius: 10px;
-    content: "";
-    display: block;
-    margin-left:auto;
-    margin-right:auto;
-    height: 100%;
-      
-    background-color: white;
-    box-shadow: 0px 0px 0.2vh 0px rgba(60,30,0,0.05);    
-  }
-  
-  .shadow {
-    top: 0;
-    transform-origin: 50% 100%;
-    
-    margin-top: -100vh;
-    transform: translateZ(-0.5px) scale(10) translateY(20px);
-    
-    margin-left:auto;
-    margin-right:auto;
-    
-    background-color: transparent;
-  }
-  
-  body.sticky .shadow {
-    /* desktop safari gets funky if we use the position: sticky */
-    position: -webkit-sticky;
-  }
-  
-  .shadow:before {
-    position: absolute;
-    content: " ";
-    top: 4.3vh;
-    right: 4.3vh;
-    bottom: 4.3vh;
-    left: 4.3vh;
-    z-index: -2;
-  
-    background-color: transparent;
-    box-shadow: 
-      2vh 2vh 4vh 3vh rgba(51,95,208,0.2),
-      -2vh -2vh 4vh 3vh rgba(255,180,0,0.2);
-  }
+/* .bgChoose {
+    background-color: #5ebfbc56;
+    border-radius: 15px;
+    border-width: solid 60px #5ebfbc56;
+} */
 
 /**/
+
 .textStyle .yellowBlock {
     position: relative;
     height: 60px;
@@ -230,7 +166,7 @@ main {
     position: absolute;
     top: 0%;
     right: -20%;
-    min-width: 20%;
+    min-width: 13%;
 
     transition: right .5s ease;
 }
@@ -276,7 +212,7 @@ main {
 .yellowVerticalBlock2 {
     z-index: 5;
     position: absolute;
-    width: 8%;
+    min-width: 8%;
     right: -3%;
     top: 510px;
 }
@@ -299,7 +235,7 @@ main {
 
 .redRoundedWaves2._anim-items {
     position: absolute;
-    width: 15%;
+    min-width: 15%;
     left: -50%;
 
     transition: left .5s ease;
@@ -311,7 +247,7 @@ main {
 
 .blueWaves2._anim-items {
     position: absolute;
-    width: 20%;
+    min-width: 20%;
 
     top: -100px;
     right: 20%;
@@ -328,7 +264,7 @@ main {
     position: absolute;
     top: 280px;
     left: -20%;
-    width: 13%;
+    min-width: 13%;
 
     transition: left .5s ease;
 }
@@ -342,7 +278,7 @@ main {
 
     top: 0px;
     right: -20%;
-    width: 10%;
+    min-width: 10%;
 
     transform: scale(0%, 0%);
     transition: all .5s ease;
@@ -359,7 +295,7 @@ main {
     opacity: 0;
 
     left: -10%;
-    width: 8%;
+    min-width: 8%;
 
     transition: top .5s ease, opacity .5s ease;
 }
@@ -371,12 +307,12 @@ main {
 
 .redTriangle2._anim-items {
     position: absolute;
-
-    left: -20%;
-    top: 0px;
+    left: -18%;
+    top: -40px;
     width: 10%;
     transform: scale(0%, 0%);
     opacity: 0;
+
     transition: opacity .5s ease, transform .5s ease;
 }
 
@@ -387,19 +323,19 @@ main {
 
 .redTriangle2.borderTriangle._anim-items {
     left: -30%;
-    top: -10px;
+    top: -50px;
     width: 10%;
 
     transition: left .5s ease, top .5s ease;
 }
 
 .redTriangle2.borderTriangle._anim-items.active-anime {
-    left: -17%;
+    left: -15%;
 }
 
 .angle2._anim-items{
     position: absolute;
-    width: 10%;
+    min-width: 10%;
 
     top: 0px;
     right: -17%;
@@ -451,14 +387,24 @@ main {
 .toolsPos {
     position: absolute;
     top: 205%;
-    width: 70%;
+    min-width: 70%;
 }
 
 /**/
 
+.simpleParallax > img {
+    transform: translate(0px, 0px);
+    transition: transform 0.7s ease;
+}
+
+.simpleParallax > img.translatingFigures {
+    transform: translate(0px, 20px);
+}
+
 .relativeFigures {
     position: relative;
 }
+
 
 /**/
 
@@ -911,7 +857,7 @@ span {
     }
 
     .skillsList {
-        justify-content: left;
+        justify-content: center;
     }
     
     .nameText h4{
@@ -920,14 +866,6 @@ span {
 
     .nameText p{
         font-size: 20px;
-    }
-
-    .redTriangle._anim-items {
-        top:5%;
-    }
-
-    .redTriangle2._anim-items {
-        top: 365%;
     }
 
     .hobbiesList {
@@ -984,14 +922,6 @@ span {
         justify-content: space-between;
     }
 
-    .redTriangle._anim-items {
-        top:15%;
-    }
-
-    .redTriangle2._anim-items {
-        top: 366%;
-    }
-
     main {
         width: 100%;
     }
@@ -1030,17 +960,6 @@ span {
 @media only screen and (max-width: 1028px) {
     .toolsList {
         justify-content: center;
-    }
-
-    .redTriangle._anim-items {
-        top:15%;
-    }
-}
-
-@media only screen and (min-width: 1028px) {
-
-    .redTriangle._anim-items {
-        top:20%;
     }
 }
 

@@ -1,6 +1,5 @@
 var image = document.querySelectorAll('.relativeFigures > img');
 new simpleParallax(image, {
-	scale: 1.5,
 });
 
 let isEndGTyping = true;
@@ -19,7 +18,7 @@ document.addEventListener('DOMContentLoaded', () => {
 			
 			if(el.parentElement.classList.contains('simpleParallax')) {
 				console.log('Top:' + el.getBoundingClientRect().top + '---' + 'Height:' +el.offsetHeight);
-				scrollOffset = el.getBoundingClientRect().top + (el.offsetHeight * 2); //Поиграться со значениями, основную штуку зробил
+				scrollOffset = el.getBoundingClientRect().top + (el.offsetHeight * 3); //Поиграться со значениями, основную штуку зробил
 			}
 			else {
 				scrollOffset = el.offsetTop + (el.offsetHeight / 2);
@@ -89,4 +88,37 @@ function StartTextAnimation(i) {
 		});
 	}
 }
+
+// const textElements = document.querySelectorAll(".textStyle");
+
+// textElements.forEach(el => {
+// 	if(!el.classList.contains('nameText')) {
+// 		el.addEventListener('mouseover', function() {
+// 			this.classList.add('bgChoose');
+// 		})
+	
+// 		el.addEventListener('mouseout', function() {
+// 			this.classList.remove('bgChoose');
+// 		})
+// 	}
+// });
+
+const relativeFigures = document.querySelectorAll('.simpleParallax > img');
+let isStart = true;
+setInterval(() => {
+	if(isStart) {
+		relativeFigures.forEach(el => {
+			el.classList.add('.translatingFigures');
+		});
+
+		isStart = false;
+	}
+	else {
+		relativeFigures.forEach(el => {
+			el.classList.remove('.translatingFigures');
+		});
+
+		isStart = true;
+	}
+}, 750);
 
