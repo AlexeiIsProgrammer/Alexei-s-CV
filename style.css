@@ -694,7 +694,7 @@ main {
 
 .double-border {
   border-style:solid;
-  border-image: url('/src/bdr.svg') 20 / 30px stretch;
+  border-image: url(src/bdr.svg) 20 / 30px stretch;
 
   border-image-slice: 50 48 50 50;
   border-image-outset: 1em;
