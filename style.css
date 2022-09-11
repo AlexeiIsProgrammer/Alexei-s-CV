@@ -3,13 +3,11 @@
 * {
     margin: 0px;
     padding: 0px;
-    
 }
 
 body {
     display: flex;
     justify-content: center;
-
     background-color: #ededed;
 }
 
@@ -956,22 +954,6 @@ span {
 
     main {
         width: 100%;
-    }
-
-    .letter {
-        
-    }
-
-    .letter::before, .letter::after {
-
-    }
-
-    .letter::before {
-
-    }
-
-    .letter::after {
-
     }
 
     .nameText p{
