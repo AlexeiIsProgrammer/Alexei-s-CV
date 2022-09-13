@@ -1,5 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
 
+element {
+    --left-margin-figure: 30px;
+}
+
 * {
     margin: 0px;
     padding: 0px;
@@ -116,9 +120,13 @@ main {
     transform: scale(100%, 100%);
 }
 
+.blackDotes._anim-items {
+    top: -4px;
+    left: -20.8%;
+}
+
 .yellowTriangles._anim-items {
     position: absolute;
-    display: block;
 
     top: 70px;
     right: -10%;
@@ -126,6 +134,10 @@ main {
     opacity: 0;
     
     transition: all 1s ease-in-out;
+}
+
+.blackTriangles._anim-items {
+    right: -7%;
 }
 
 .yellowTriangles._anim-items.active-anime {
@@ -286,10 +298,15 @@ main {
     transform: scale(100%, 100%);
 }
 
+.blackDotes2._anim-items {
+    right: -19.5%;
+    top: -5px;
+}
+
 .yellowTriangles2._anim-items{
     position: absolute;
 
-    top: 0px;
+    top: -20px;
     opacity: 0;
 
     left: -10%;
@@ -299,8 +316,13 @@ main {
 }
 
 .yellowTriangles2._anim-items.active-anime{
-    top: -60px;
     opacity: 1;
+    top: 0px;
+}
+
+.blackTriangles2._anim-items {
+    left: -12%;
+    top: 20%;
 }
 
 .redTriangle2._anim-items {
@@ -837,7 +859,7 @@ main {
     font-size: 17px;
 }
 
-.declaration > div:nth-last-child(2) {
+.declaration > div:nth-last-child(3) {
     display: flex;
     flex-flow: column nowrap;   
     align-items: center;

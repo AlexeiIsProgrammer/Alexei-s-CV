@@ -1,6 +1,29 @@
-var image = document.querySelectorAll('.relativeFigures > img');
-new simpleParallax(image, {
+let leftParallax = document.querySelectorAll('.relativeFigures > img:first-child');
+new simpleParallax(leftParallax, {
+	orientation: 'left',
+	overflow: true,
+	delay: 0,
 });
+
+let upParallax = document.querySelectorAll('.relativeFigures > img:last-child');
+new simpleParallax(upParallax, {
+	overflow: true,
+	delay: 0,
+});
+
+let leftYellowBlock = document.querySelectorAll('.yellowBlock > img:first-child');
+new simpleParallax(leftYellowBlock, {
+	overflow: true,
+	delay: 0,
+});
+
+let upYellowBlock = document.querySelectorAll('.yellowBlock > img:last-child');
+new simpleParallax(upYellowBlock, {
+	orientation: 'left',
+	overflow: true,
+	delay: 0,
+});
+
 
 let isEndGTyping = true;
 let dataText = "I believe that I'll be able to make great things in the nearest future!";
