@@ -115,7 +115,6 @@ function StartTextAnimation(i) {
 const getMain = document.querySelector('main');
 
 window.addEventListener('resize', function(event) {
-	console.log(this.screen.width);
     if(this.screen.width <= 768) {
 		getMain.classList.remove('letter');
 	}
