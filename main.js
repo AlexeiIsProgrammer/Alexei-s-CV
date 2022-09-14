@@ -40,32 +40,40 @@ document.addEventListener('DOMContentLoaded', () => {
 		scrollItems.forEach(el => {
 			let scrollOffset;
 			
-			if(el.parentElement.classList.contains('simpleParallax')) {
-				console.log('Top:' + el.getBoundingClientRect().top + '---' + 'Height:' +el.offsetHeight);
-				scrollOffset = el.getBoundingClientRect().top + (el.offsetHeight * 3); //Поиграться со значениями, основную штуку зробил
+			if(el.parentElement.classList.contains('relative-figures')) {
+				//console.log('Top:' + el.getBoundingClientRect().top + '---' + 'Height:' +el.offsetHeight);
+				scrollOffset = el.getBoundingClientRect().top;
+
+				if (scrollOffset < 700) {
+					el.classList.add('active-anime');
+				} else {
+					el.classList.remove('active-anime');
+				}
 			}
 			else {
 				scrollOffset = el.offsetTop + (el.offsetHeight / 2);
-				
+
+				if (windowCenter >= scrollOffset) {
+					el.classList.add('active-anime');
+					if(el.classList.contains('satodsan-uvemopag') && isEndGTyping) {
+						isEndGTyping = false;
+						StartTextAnimation(0);
+					}
+				} else {
+					el.classList.remove('active-anime');
+	
+					if(el.classList.contains('satodsan-uvemopag')){
+						isEndGTyping = true;
+					}
+				}
 			}
 
-			if (windowCenter >= scrollOffset) {
-				el.classList.add('active-anime');
-				if(el.classList.contains('satodsan-uvemopag') && isEndGTyping) {
-					isEndGTyping = false;
-					StartTextAnimation(0);
-				}
-			} else {
-				el.classList.remove('active-anime');
-
-				if(el.classList.contains('satodsan-uvemopag')){
-					isEndGTyping = true;
-				}
-			}
+			
 
 			if(el.parentElement.classList.contains('relative-figures') || el.parentElement.classList.contains('yellow-block')) {
 				el.addEventListener('mouseover', function () {
 					this.classList.remove('active-anime');
+					console.log('Top:' + el.getBoundingClientRect().top + '---' + 'Height:' +el.offsetHeight);
 					setTimeout(()=>{
 						this.classList.add('active-anime');
 					}, 1000);
