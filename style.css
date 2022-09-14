@@ -34,29 +34,21 @@ main {
 
 /**/
 
-._anim-items {
-    transition: left 0.7s ease;
-}
-
-._anim-items.active-anime {
-    left: calc(--margin-figure);
-}
-
-.textStyle .yellowBlock {
+.yellow-block {
     position: relative;
     height: 60px;
 }
 
-.textStyle .yellowBlock img {
+.yellow-block img {
     min-width: 30%;
 }
 
-.yellowBlock > img{
+.yellow-block > img{
     position: absolute;
     top: 50%;
 }
 
-.yellowBlock > img:first-child._anim-items{
+.yellow-block > img:first-child._anim-items{
     position: absolute;
     top: 50%;
 
@@ -64,11 +56,11 @@ main {
     transition: opacity .5s ease;
 }
 
-.yellowBlock > img:first-child._anim-items.active-anime{
+.yellow-block > img:first-child._anim-items.active-anime{
     opacity: 1;
 }
 
-#yellowBlockBlack._anim-items {
+#yellow-block-black._anim-items {
     top: 60%;
     left: 5%;
     opacity: 0;
@@ -76,13 +68,13 @@ main {
     transition: all .5s ease;
 }
 
-#yellowBlockBlack._anim-items.active-anime {
+#yellow-block-black._anim-items.active-anime {
     top: 35%;
     left: -5%;
     opacity: 1;
 }
 
-.blueBlock{
+.blue-block{
     position: inherit;
 
     max-width: 100%;
@@ -91,16 +83,16 @@ main {
     margin: 2rem 0rem 2rem 0rem;
 }
 
-.blueBlock._anim-items{
+.blue-block._anim-items{
     opacity: 0;
     transition: opacity .4s ease;
 }
 
-.blueBlock._anim-items.active-anime{
+.blue-block._anim-items.active-anime{
     opacity: 1;
 }
 
-.blueWaves._anim-items {
+.blue-waves._anim-items {
     position: absolute;
     max-width: 70%;
     min-width: 15%;
@@ -109,11 +101,11 @@ main {
     transition: left 1s ease-in-out;
 }
 
-.blueWaves._anim-items.active-anime {
+.blue-waves._anim-items.active-anime {
     left: -20%;
 }
 
-.aLotOfDots._anim-items {
+.a-lot-of-dots._anim-items {
     position: absolute;
     min-width: 10%;
 
@@ -124,24 +116,24 @@ main {
     transition: all .7s ease;
 }
 
-.aLotOfDots._anim-items.active-anime {
+.a-lot-of-dots._anim-items.active-anime {
     left: -20%;
     opacity: 1;
 }
 
-.blackDotes._anim-items {
+.black-dotes._anim-items {
     top: -4px;
     left: -10.8%;
     opacity: 0;
 }
 
-.blackDotes._anim-items.active-anime {
+.black-dotes._anim-items.active-anime {
     top: -4px;
     left: -20.8%;
     opacity: 1;
 }
 
-.yellowTriangles._anim-items {
+.yellow-triangles._anim-items {
     position: absolute;
 
     top: 70px;
@@ -152,16 +144,16 @@ main {
     transition: all 1s ease-in-out;
 }
 
-.blackTriangles._anim-items {
+.black-triangles._anim-items {
     right: -15%;
 }
 
-.yellowTriangles._anim-items.active-anime {
+.yellow-triangles._anim-items.active-anime {
     top: 30px;
     opacity: 1;
 }
 
-.redTriangle._anim-items {
+.red-triangle._anim-items {
     position: absolute;
     min-width: 10%;
     max-width: 10%;
@@ -172,23 +164,23 @@ main {
     transition: opacity .5s ease, transform .5s ease;
 }
 
-.redTriangle._anim-items.active-anime { 
+.red-triangle._anim-items.active-anime { 
     transform: scale(100%, 100%);
     opacity: 1;
 }
 
-.redTriangle.borderTriangle._anim-items {
+.red-triangle.border-triangle._anim-items {
     right: -25%;
     top: -8px;
     transition: right .5s ease, top .5s ease;
 }
 
-.redTriangle.borderTriangle._anim-items.active-anime {
+.red-triangle.border-triangle._anim-items.active-anime {
     right: -20%;
     top: -10px;
 }
 
-.redWaves._anim-items{
+.red-waves._anim-items{
     position: absolute;
     top: 0%;
     right: -20%;
@@ -197,11 +189,11 @@ main {
     transition: right .5s ease;
 }
 
-.redWaves._anim-items.active-anime {
+.red-waves._anim-items.active-anime {
     right: -13%;
 }
 
-.redRoundedWaves._anim-items {
+.red-rounded-waves._anim-items {
     position: absolute;
     width: 15%;
     left: -30%;
@@ -209,33 +201,33 @@ main {
     transition: left .5s ease;
 }
 
-.redRoundedWaves._anim-items.active-anime {
+.red-rounded-waves._anim-items.active-anime {
     left: -20%;
 }
 
-.yellowVerticalBlock {
+.yellow-vertical-block {
     position: absolute;
     width: 7%;  
 }
 
-.yellowVerticalBlock._anim-items{
+.yellow-vertical-block._anim-items{
     top: 0px;
     left: -13%;
 
     transition: top 1s ease, left 1s ease;
 }
 
-.yellowVerticalBlock._anim-items.active-anime{
+.yellow-vertical-block._anim-items.active-anime{
     top: -30px;
     left: -17%;
 }
 
-.yellowVerticalBlockBlack{
+.yellow-vertical-block-black{
     left: -15%;
     top: -20px;
 }
 
-.yellowVerticalBlock2 {
+.yellow-vertical-block-2 {
     z-index: 5;
     position: absolute;
     min-width: 8%;
@@ -243,23 +235,23 @@ main {
     top: 510px;
 }
 
-.yellowVerticalBlock2._anim-items{
+.yellow-vertical-block-2._anim-items{
     right: -8%;
     transition: top 1s ease, right 1s ease;
 }
 
-.yellowVerticalBlock2._anim-items.active-anime{
+.yellow-vertical-block-2._anim-items.active-anime{
     top: 480px;
     right: -2%;
 }
 
-.yellowVerticalBlockBlack2{
+.yellow-vertical-block-black-2{
     z-index: 6;
     top: 490px;
     right: -3%;
 }
 
-.redRoundedWaves2._anim-items {
+.red-rounded-waves-2._anim-items {
     position: absolute;
     min-width: 15%;
     left: -50%;
@@ -267,11 +259,11 @@ main {
     transition: left .5s ease;
 }
 
-.redRoundedWaves2._anim-items.active-anime {
+.red-rounded-waves-2._anim-items.active-anime {
     left: -20%;
 }
 
-.blueWaves2._anim-items {
+.blue-waves-2._anim-items {
     position: absolute;
     min-width: 20%;
 
@@ -281,11 +273,11 @@ main {
     transition: right .5s ease;
 }
 
-.blueWaves2._anim-items.active-anime {
+.blue-waves-2._anim-items.active-anime {
     right: -20%;
 }
 
-.redWaves2._anim-items {
+.red-waves-2._anim-items {
     z-index: 2;
     position: absolute;
     top: 280px;
@@ -295,11 +287,11 @@ main {
     transition: left .5s ease;
 }
 
-.redWaves2._anim-items.active-anime {
+.red-waves-2._anim-items.active-anime {
     left: -10%;
 }
 
-.aLotOfDots2._anim-items{
+.a-lot-of-dots-2._anim-items{
     position: absolute;
 
     top: 0px;
@@ -310,23 +302,23 @@ main {
     transition: all .5s ease;
 }
 
-.aLotOfDots2._anim-items.active-anime{
+.a-lot-of-dots-2._anim-items.active-anime{
     right: -20%;
     opacity: 1;
 }
 
-.blackDotes2._anim-items {
+.black-dotes-2._anim-items {
     right: -9.5%;
     top: -5px;
     opacity: 0;
 }
 
-.blackDotes2._anim-items.active-anime {
+.black-dotes-2._anim-items.active-anime {
     opacity: 1;
     right: -19.5%;
 }
 
-.yellowTriangles2._anim-items{
+.yellow-triangles-2._anim-items{
     position: absolute;
 
     top: -20px;
@@ -338,17 +330,17 @@ main {
     transition: top .5s ease, opacity .5s ease;
 }
 
-.yellowTriangles2._anim-items.active-anime{
+.yellow-triangles-2._anim-items.active-anime{
     opacity: 1;
     top: 0px;
 }
 
-.blackTriangles2._anim-items {
+.black-triangles-2._anim-items {
     left: -12%;
     top: 20%;
 }
 
-.redTriangle2._anim-items {
+.red-triangle-2._anim-items {
     position: absolute;
     left: -18%;
     top: -40px;
@@ -359,12 +351,12 @@ main {
     transition: opacity .5s ease, transform .5s ease;
 }
 
-.redTriangle2._anim-items.active-anime {
+.red-triangle-2._anim-items.active-anime {
     transform: scale(100%, 100%);
     opacity: 1;
 }
 
-.redTriangle2.borderTriangle._anim-items {
+.red-triangle-2.border-triangle._anim-items {
     left: -30%;
     top: -50px;
     width: 10%;
@@ -372,11 +364,11 @@ main {
     transition: left .5s ease, top .5s ease;
 }
 
-.redTriangle2.borderTriangle._anim-items.active-anime {
+.red-triangle-2.border-triangle._anim-items.active-anime {
     left: -15%;
 }
 
-.angle2._anim-items{
+.angle-2._anim-items{
     position: absolute;
     min-width: 10%;
 
@@ -388,17 +380,17 @@ main {
 }
 
 
-.angle2._anim-items.active-anime {    
+.angle-2._anim-items.active-anime {    
     opacity: 1;
 }
 
-.angle2.blackAngle._anim-items{
+.angle-2.black-angle._anim-items{
     top: 20px;
     right: -19%;
     transition: all 0.5s ease;
 }
 
-.angle2.blackAngle._anim-items.active-anime {
+.angle-2.black-angle._anim-items.active-anime {
     top: -10px;
     right: -16%;
 }
@@ -417,17 +409,17 @@ main {
     opacity: 1;
 }
 
-.angle.blackAngle._anim-items {
+.angle.black-angle._anim-items {
     right: -18%;
     top: 40px;
     transition: all 0.5s ease;
 }
 
-.angle.blackAngle._anim-items.active-anime {
+.angle.black-angle._anim-items.active-anime {
     right: -8%;
 }
 
-.toolsPos {
+.tools-pos {
     position: absolute;
     top: 205%;
     min-width: 70%;
@@ -467,25 +459,25 @@ main {
   }
 /**/
 
-.relativeFigures {
+.relative-figures {
     position: relative;
 }
 
 /**/
 
-.infoContent {
+.info-content {
     width: 100%;
     display: flex;
     flex-flow: column nowrap;
     justify-content: space-between;
 }
 
-.infoContent > div{
+.info-content > div{
     display: flex;
     flex-flow: row wrap;
 }
 
-.infoContent > div > div{
+.info-content > div > div{
     width: 50%;
     margin: 10px 30px 10px 0px;
 }
@@ -503,11 +495,11 @@ main {
     max-width: 8%;
 }
 
-.textStyle {
-    margin: 20px 0px;
+.margin-spacing > div{
+    margin: 60px 0px;
 }
 
-.textStyle h4{
+.margin-spacing h4{
     font-size: 24px;
     color: #ED6A6D;
     margin-bottom: 15px;
@@ -515,52 +507,52 @@ main {
     font-family: 'Poppins', sans-serif;
 }
 
-.textStyle h4._anim-items {
+.margin-spacing h4._anim-items {
     opacity: 0;
     transform: translate(-50%, 0px);
     transition: opacity 0.4s ease, transform 0.4s ease;
 }
 
-.textStyle h4._anim-items.active-anime{
+.margin-spacing h4._anim-items.active-anime{
     opacity: 1;
     transform: translate(0px, 0px);
 }
 
-.nameText > h4:first-child {
+.name-text > h4:first-child {
     margin: 0px;
     transform: translate(-50%, 0px);
     opacity: 0;
     transition: opacity 0.3s ease, transform 0.5s ease;
 } 
 
-.nameText > h4:first-child.active-anime {
+.name-text > h4:first-child.active-anime {
     transform: translate(0px, 0px);
     opacity: 1;
 } 
 
-.nameText > h4:nth-child(2) {
+.name-text > h4:nth-child(2) {
     transform: translate(50%, 0px);
     opacity: 0;
     transition: opacity 0.3s ease, transform 0.5s ease;
 } 
 
-.nameText > h4:nth-child(2).active-anime {
+.name-text > h4:nth-child(2).active-anime {
     transform: translate(0px, 0px);
     opacity: 1;
 } 
 
-.nameText > p.myPosition._anim-items {
+.name-text > p.myPosition._anim-items {
     transform: translate(0px, 20%);
     opacity: 0;
     transition: all 0.4s ease 0.6s;
 } 
 
-.nameText > p.myPosition._anim-items.active-anime {
+.name-text > p.myPosition._anim-items.active-anime {
     transform: translate(0px, 0px);
     opacity: 1;
 } 
 
-.textStyle .subtitle h4{
+.margin-spacing .subtitle h4{
     min-width: 100px;
     font-size: 18px;
     color: #000;
@@ -570,25 +562,25 @@ main {
     font-family: 'Poppins', sans-serif;
 }
 
-.textStyle p{
+.margin-spacing p{
     text-align: justify;
     font-size: 15px;
     font-weight: 400;
     font-family: 'Poppins', sans-serif;
 }
 
-.personalInfo p {
+.personal-info p {
     min-width: 200px;
     margin-left: 10px;
 }
 
-.textStyle p._anim-items {
+.margin-spacing p._anim-items {
     transform: translate(20%, 0px);
     opacity: 0;
     transition: opacity 0.3s ease, transform 0.5s ease;
 }
 
-.textStyle p._anim-items.active-anime {
+.margin-spacing p._anim-items.active-anime {
     transform: translate(0px, 0px);
     opacity: 1;
 }
@@ -617,12 +609,12 @@ main {
 
 /**/
 
-.nameText h4{
+.name-text h4{
     font-size: 50px;
     width: 50px;
 }
 
-.nameText p{
+.name-text p{
     font-size: 24px;
     margin-left: -60px;
     margin-top: -20px;
@@ -634,52 +626,52 @@ main {
     width: 80%;
 }
 
-.hobbiesList {
+.hobbies-list {
     display: flex;
     flex-flow: row wrap;
     align-items: center;
     justify-content: space-between; 
 }
 
-.hobbiesList > div {
+.hobbies-list > div {
     width: auto;
     display: flex;
     flex-flow: column nowrap;
     align-items: center;
 }
 
-.hobbiesList > div > p {
+.hobbies-list > div > p {
     font-size: 17px;
 }
 
-.hobbiesList > div > img {
+.hobbies-list > div > img {
     max-width: 150px;
     min-width: 50px;
     font-size: 17px;
 }
 
-.hobbiesList p._anim-items {
+.hobbies-list p._anim-items {
     transform: translate(0px, 100%);
     opacity: 0;
     transition: opacity 0.5s ease, transform 0.7s ease;
 }
 
-.hobbiesList img._anim-items {
+.hobbies-list img._anim-items {
     transform: scale(0);
     opacity: 0;
     transition: opacity 0.3s ease, transform 0.5s ease;
 }
 
-.hobbiesList p._anim-items.active-anime {
+.hobbies-list p._anim-items.active-anime {
     transform: translate(0px, 0px);
     opacity: 1;
 }
 
-.hobbiesList img._anim-items.active-anime:hover {
+.hobbies-list img._anim-items.active-anime:hover {
     transform: scale(1.2);
 }
 
-.hobbiesList img._anim-items.active-anime {
+.hobbies-list img._anim-items.active-anime {
     transform: scale(1);
     opacity: 1;
 }
@@ -690,30 +682,30 @@ main {
     width: 80%;
 }
 
-.skillsList {
+.skills-list {
     display: flex;
     flex-flow: row wrap;
     justify-content: left;
 }
 
-.skillsList > ul > li{
+.skills-list > ul > li{
     margin: 20px 0px 20px 0px;
     padding: 0px 10px 0px 10px;
     list-style-image: url(src/Ellipse1.svg);
 }
 
-.skillsList > ul > li > p {
+.skills-list > ul > li > p {
     font-size: 18px;
     
 }
 
-.skillsList._anim-items > ul > li > p {
+.skills-list._anim-items > ul > li > p {
     transform: translate(100%, 0px );
     opacity: 0;
     transition: all 0.7s ease;
 }
 
-.skillsList._anim-items.active-anime > ul > li > p {
+.skills-list._anim-items.active-anime > ul > li > p {
     transform: translate(0px, 0px);
     opacity: 1;
 }
@@ -752,14 +744,14 @@ main {
   pointer-events: none;
 }
 
-.toolsList {
+.tools-list {
     width: 80%;
     display: flex;
     justify-content: space-between;
     flex-flow: row wrap;
 }
 
-.toolsList > div {
+.tools-list > div {
     margin: 10px;
 }
 
@@ -770,63 +762,63 @@ main {
     border: 3px solid black;
 }
 
-.fillBar {
+.fill-bar {
     position: absolute;
     background-color: #5ebfbc;
     min-height: 100%;
 }
 
-.tools._anim-items > .toolsList > .subtitle > .bar > .fillBar {
+.tools._anim-items > .tools-list > .subtitle > .bar > .fill-bar {
     width: 0%;
     transition: width 1s ease-in-out;
 }
 
-.tools._anim-items.active-anime > .toolsList > .subtitle:nth-child(1) > .bar > .fillBar {
+.tools._anim-items.active-anime > .tools-list > .subtitle:nth-child(1) > .bar > .fill-bar {
     width: 45%;
 }
 
-.tools._anim-items.active-anime > .toolsList > .subtitle:nth-child(2) > .bar > .fillBar._anim-items.active-anime {
+.tools._anim-items.active-anime > .tools-list > .subtitle:nth-child(2) > .bar > .fill-bar._anim-items.active-anime {
     width: 80%;
 }
 
-.tools._anim-items.active-anime > .toolsList > .subtitle:nth-child(3) > .bar > .fillBar {
+.tools._anim-items.active-anime > .tools-list > .subtitle:nth-child(3) > .bar > .fill-bar {
     width: 25%;
 }
 
-.tools._anim-items.active-anime > .toolsList > .subtitle:nth-child(4) > .bar > .fillBar {
+.tools._anim-items.active-anime > .tools-list > .subtitle:nth-child(4) > .bar > .fill-bar {
     width: 70%;
 }
 
-.tools._anim-items.active-anime > .toolsList > .subtitle:nth-child(5) > .bar > .fillBar {
+.tools._anim-items.active-anime > .tools-list > .subtitle:nth-child(5) > .bar > .fill-bar {
     width: 27%;
 }
 
-.tools._anim-items.active-anime > .toolsList > .subtitle:nth-child(6) > .bar > .fillBar {
+.tools._anim-items.active-anime > .tools-list > .subtitle:nth-child(6) > .bar > .fill-bar {
     width: 50%;
 }
 
-.tools._anim-items.active-anime > .toolsList > .subtitle:nth-child(7) > .bar > .fillBar {
+.tools._anim-items.active-anime > .tools-list > .subtitle:nth-child(7) > .bar > .fill-bar {
     width: 50%;
 }
 
-.tools._anim-items.active-anime > .toolsList > .subtitle:nth-child(8) > .bar > .fillBar {
+.tools._anim-items.active-anime > .tools-list > .subtitle:nth-child(8) > .bar > .fill-bar {
     width: 60%;
 }
 
 /**/
 
-.personalInfo {
+.personal-info {
     margin-top: 4rem;
     width: 80%;
 }
 
-.infoList {
+.info-list {
     display: flex;
     flex-flow: column nowrap;
     text-align: left;
 }
 
-.infoList > div {
+.info-list > div {
     margin-top: 10px;
     display: flex;
     flex-flow: row nowrap;
@@ -835,24 +827,24 @@ main {
     width: 60%;
 }
 
-.infoList._anim-items > div > div {
+.info-list._anim-items > div > div {
     opacity: 0;
     transform: translate(120%, 0px);
     transition: all 0.7s ease;
 }
 
-.infoList._anim-items.active-anime > div > div {
+.info-list._anim-items.active-anime > div > div {
     opacity: 1;
     transform: translate(0px, 0px);
 }
 
-.infoList._anim-items > div > p {
+.info-list._anim-items > div > p {
     opacity: 0;
     transform: translate(-120%, 0px);
     transition: all 0.7s ease;
 }
 
-.infoList._anim-items.active-anime > div > p {
+.info-list._anim-items.active-anime > div > p {
     opacity: 1;
     transform: translate(0px, 0px);
 }
@@ -897,43 +889,43 @@ span {
 
 @media only screen and (max-width: 600px) {
 
-    .toolsList > .subtitle > .bar {
+    .tools-list > .subtitle > .bar {
         max-width: 150px;
         min-width: 150px;
     }
 
-    .textStyle {
+    .margin-spacing {
         width: 80%;
     }
 
-    .infoContent > div{
+    .info-content > div{
         flex-wrap: wrap;
         justify-content: center;
     }
 
-    .infoContent > div > div{
+    .info-content > div > div{
         flex-wrap: wrap;
         width: 100%;
         justify-content: center;
     }
 
-    .hobbiesList {
+    .hobbies-list {
         justify-content: center;
     }
 
-    .skillsList {
+    .skills-list {
         justify-content: center;
     }
     
-    .nameText h4{
+    .name-text h4{
         font-size: 30px;
     }
 
-    .nameText p{
+    .name-text p{
         font-size: 20px;
     }
 
-    .hobbiesList {
+    .hobbies-list {
         justify-content: center;
     }
 
@@ -941,49 +933,49 @@ span {
         width: 100%;
     }
 
-    .nameText p{
+    .name-text p{
         margin-left: 0;
     }
 }
  
 @media only screen and (min-width: 600px) {
 
-    .toolsList > .subtitle > .bar {
+    .tools-list > .subtitle > .bar {
         max-width: none;
         min-width: 200px;
     }
 
-    .textStyle {
+    .margin-spacing {
         width: 80%;
     }
 
-    .infoContent > div{
+    .info-content > div{
         flex-wrap: wrap;
         justify-content: center;
     }
 
-    .infoContent > div > div{
+    .info-content > div > div{
         flex-wrap: wrap;
         width: 100%;
         justify-content: center;
     }
 
-    .nameText h4{
+    .name-text h4{
         font-size: 50px;
         margin-left: 0px;
         margin-right: 0px;
         text-align: center;
     }
 
-    .hobbiesList {
+    .hobbies-list {
         justify-content: space-between;
     }
 
-    .nameText p{
+    .name-text p{
         font-size: 24px;
     }
 
-    .skillsList {
+    .skills-list {
         justify-content: space-between;
     }
 
@@ -991,28 +983,28 @@ span {
         width: 100%;
     }
 
-    .nameText p{
+    .name-text p{
         margin-left: -60;
     }
 }
  
 @media only screen and (min-width: 768px) {
 
-    .infoContent > div {
+    .info-content > div {
         flex-wrap: nowrap;
     }
 
-    .infoContent > div > div{
+    .info-content > div > div{
         flex-wrap: nowrap;
         width: 50%;
         justify-content: space-between;
     }
-    .nameText h4{
+    .name-text h4{
         margin-left: 0px;
         margin-right: 0px;
         text-align: left;
     }
-    .hobbiesList {
+    .hobbies-list {
         justify-content: space-between;
     }
 
@@ -1023,7 +1015,7 @@ span {
 }
  
 @media only screen and (max-width: 1028px) {
-    .toolsList {
+    .tools-list {
         justify-content: center;
     }
 }
@@ -1032,7 +1024,7 @@ span {
 }
 
 @media only screen and (max-width: 1535px) {
-    .toolsList {
+    .tools-list {
         padding: 0px 30px 20px 0px;
     }
     .tools {
@@ -1046,7 +1038,7 @@ span {
 
 @media only screen and (min-width: 1536px) {
 
-    .toolsList {
+    .tools-list {
         padding: 0px 70px 60px 0px;
     }
 }

@@ -1,23 +1,24 @@
-let leftParallax = document.querySelectorAll('.relativeFigures > img:first-child');
+//Parallax effect
+let leftParallax = document.querySelectorAll('.relative-figures > img:first-child');
 new simpleParallax(leftParallax, {
 	orientation: 'left',
 	overflow: true,
 	delay: 0,
 });
 
-let upParallax = document.querySelectorAll('.relativeFigures > img:last-child');
+let upParallax = document.querySelectorAll('.relative-figures > img:last-child');
 new simpleParallax(upParallax, {
 	overflow: true,
 	delay: 0,
 });
 
-let leftYellowBlock = document.querySelectorAll('.yellowBlock > img:first-child');
+let leftYellowBlock = document.querySelectorAll('.yellow-block > img:first-child');
 new simpleParallax(leftYellowBlock, {
 	overflow: true,
 	delay: 0,
 });
 
-let upYellowBlock = document.querySelectorAll('.yellowBlock > img:last-child');
+let upYellowBlock = document.querySelectorAll('.yellow-block > img:last-child');
 new simpleParallax(upYellowBlock, {
 	orientation: 'left',
 	overflow: true,
@@ -28,7 +29,7 @@ new simpleParallax(upYellowBlock, {
 let isEndGTyping = true;
 let dataText = "I believe that I'll be able to make great things in the nearest future!";
 
-const getRelativeElement = document.querySelector('.blueWaves2');
+const getRelativeElement = document.querySelector('.blue-waves-2');
 const getBound = getRelativeElement.getBoundingClientRect().top;
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -40,7 +41,7 @@ document.addEventListener('DOMContentLoaded', () => {
 			let scrollOffset;
 			
 			if(el.parentElement.classList.contains('simpleParallax')) {
-				//console.log('Top:' + el.getBoundingClientRect().top + '---' + 'Height:' +el.offsetHeight);
+				console.log('Top:' + el.getBoundingClientRect().top + '---' + 'Height:' +el.offsetHeight);
 				scrollOffset = el.getBoundingClientRect().top + (el.offsetHeight * 3); //Поиграться со значениями, основную штуку зробил
 			}
 			else {
@@ -62,7 +63,7 @@ document.addEventListener('DOMContentLoaded', () => {
 				}
 			}
 
-			if(el.parentElement.classList.contains('relativeFigures') || el.parentElement.classList.contains('yellowBlock')) {
+			if(el.parentElement.classList.contains('relative-figures') || el.parentElement.classList.contains('yellow-block')) {
 				el.addEventListener('mouseover', function () {
 					this.classList.remove('active-anime');
 					setTimeout(()=>{
