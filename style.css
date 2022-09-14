@@ -137,7 +137,7 @@ main {
     position: absolute;
 
     top: 70px;
-    right: -18%;
+    right: -23%;
     width: 15%;
     opacity: 0;
     
@@ -145,7 +145,7 @@ main {
 }
 
 .black-triangles._anim-items {
-    right: -15%;
+    right: -20%;
 }
 
 .yellow-triangles._anim-items.active-anime {
@@ -184,7 +184,7 @@ main {
     position: absolute;
     top: 0%;
     right: -20%;
-    min-width: 13%;
+    min-width: 18%;
 
     transition: right .5s ease;
 }
@@ -236,19 +236,19 @@ main {
 }
 
 .yellow-vertical-block-2._anim-items{
-    right: -8%;
+    right: -33%;
     transition: top 1s ease, right 1s ease;
 }
 
 .yellow-vertical-block-2._anim-items.active-anime{
     top: 480px;
-    right: -2%;
+    right: -30%;
 }
 
 .yellow-vertical-block-black-2{
     z-index: 6;
     top: 490px;
-    right: -3%;
+    right: -33%;
 }
 
 .red-rounded-waves-2._anim-items {
@@ -282,7 +282,7 @@ main {
     position: absolute;
     top: 280px;
     left: -20%;
-    min-width: 13%;
+    min-width: 17%;
 
     transition: left .5s ease;
 }
@@ -622,10 +622,6 @@ main {
 
 /**/
 
-.hobbies {
-    width: 80%;
-}
-
 .hobbies-list {
     display: flex;
     flex-flow: row wrap;
@@ -936,6 +932,10 @@ span {
     .name-text p{
         margin-left: 0;
     }
+
+    .double-border {
+        border-image-slice: 28 48 50 115;
+    }   
 }
  
 @media only screen and (min-width: 600px) {
@@ -986,9 +986,13 @@ span {
     .name-text p{
         margin-left: -60;
     }
+
+    .double-border {
+        border-image-slice: 28 48 50 115;
+    }
 }
  
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width: 821px) {
 
     .info-content > div {
         flex-wrap: nowrap;
@@ -1011,7 +1015,11 @@ span {
     main {
         width: 80%;
     }
-    
+
+    .double-border {
+        border-image-slice: 29 48 49 74;
+    }
+
 }
  
 @media only screen and (max-width: 1028px) {
@@ -1020,7 +1028,11 @@ span {
     }
 }
 
-@media only screen and (min-width: 1200px) {
+@media only screen and (min-width: 1080px) {
+
+    .double-border {
+        border-image-slice: 50 48 50 50;
+    }
 }
 
 @media only screen and (max-width: 1535px) {
@@ -1033,6 +1045,7 @@ span {
 
     .double-border {
         border-image-width: 40;
+        
     }
 }
 
