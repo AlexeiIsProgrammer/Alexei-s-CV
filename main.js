@@ -33,6 +33,7 @@ const getRelativeElement = document.querySelector('.blue-waves-2');
 const getBound = getRelativeElement.getBoundingClientRect().top;
 
 document.addEventListener('DOMContentLoaded', () => {
+
 	const scrollItems = document.querySelectorAll('._anim-items');
 
 	const scrollAnimation = () => {
@@ -131,6 +132,9 @@ window.addEventListener('resize', function(event) {
 		getMain.classList.add('letter');
 	}
 }, true);
+
+
+
 
 // const textElements = document.querySelectorAll(".textStyle");
 
