@@ -885,7 +885,7 @@ span {
 
 @media only screen and (max-width: 400px) {
     .double-border {
-        border-image-slice: 28 48 50 15 5;
+        border-image-slice: 28 48 50 155;
     }
 }
 
