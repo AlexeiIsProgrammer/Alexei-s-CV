@@ -344,7 +344,7 @@ main {
     position: absolute;
     left: -18%;
     top: -40px;
-    width: 10%;
+    width: 14%;
     transform: scale(0%, 0%);
     opacity: 0;
 
@@ -359,7 +359,7 @@ main {
 .red-triangle-2.border-triangle._anim-items {
     left: -30%;
     top: -50px;
-    width: 10%;
+    width: 14%;
 
     transition: left .5s ease, top .5s ease;
 }
@@ -370,10 +370,10 @@ main {
 
 .angle-2._anim-items{
     position: absolute;
-    min-width: 10%;
+    min-width: 15%;
 
     top: 0px;
-    right: -17%;
+    right: -30%;
 
     opacity: 0;
     transition: opacity .5s ease;
@@ -386,13 +386,13 @@ main {
 
 .angle-2.black-angle._anim-items{
     top: 20px;
-    right: -19%;
+    right: -32%;
     transition: all 0.5s ease;
 }
 
 .angle-2.black-angle._anim-items.active-anime {
     top: -10px;
-    right: -16%;
+    right: -29%;
 }
 
 .angle._anim-items {
@@ -883,7 +883,13 @@ span {
 
 /**/
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 400px) {
+    .double-border {
+        border-image-slice: 28 48 50 15 5;
+    }
+}
+
+@media only screen and (max-width: 600px) and (min-width: 400px) {
 
     .tools-list > .subtitle > .bar {
         max-width: 150px;
