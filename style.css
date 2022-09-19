@@ -721,15 +721,15 @@ main {
 
 .double-border {
   border-style:solid;
-  border-image: url(./src/bdr.svg) 20 / 30px stretch;
+  border-image: url(./src/bdr.svg);
 
+  border-image-repeat: stretch;
   border-image-slice: 50 48 50 50;
   border-image-outset: 1em;
   border-image-width: 35;
   /* width: 16em;
   height: 16em; */
   position: relative;
-  margin: 0 auto;
 }
 
 .double-border:before {
@@ -944,8 +944,14 @@ span {
     }
 
     .double-border {
-        border-image-slice: 28 48 50 115;
-    }   
+        border-style: solid;
+        border-image: url(./src/bdr_new.svg);
+        
+        border-image-repeat: stretch;
+        border-image-slice: 52 50 62 49;
+        border-image-outset: 1em;
+        border-image-width: 35;
+    }
 }
  
 @media only screen and (min-width: 600px) {
@@ -998,7 +1004,13 @@ span {
     }
 
     .double-border {
-        border-image-slice: 28 48 50 115;
+        border-style: solid;
+        border-image: url(./src/bdr_new.svg);
+        
+        border-image-repeat: stretch;
+        border-image-slice: 52 50 62 49;
+        border-image-outset: 1em;
+        border-image-width: 35;
     }
 }
  
@@ -1008,7 +1020,7 @@ span {
         flex-wrap: nowrap;
     }
 
-    .info-content > div > div{
+    .info-content > div > div {
         flex-wrap: nowrap;
         width: 50%;
         justify-content: space-between;
@@ -1026,19 +1038,35 @@ span {
         width: 80%;
     }
 
-    .double-border {
-        border-image-slice: 29 48 49 74;
-    }
+}
 
+@media only screen and (min-width: 821px) and (max-width: 1100px){
+    .double-border {
+        border-style: solid;
+        border-image: url(./src/bdr_new.svg);
+        
+        border-image-repeat: stretch;
+        border-image-slice: 52 50 62 34;
+        border-image-outset: 1em;
+        border-image-width: 35;
+    }
 }
  
-@media only screen and (max-width: 1028px) {
+@media only screen and (max-width: 1100px) {
     .tools-list {
         justify-content: center;
     }
+    
 }
 
-@media only screen and (min-width: 1080px) {
+@media only screen and (min-width: 1100px) {
+
+    .double-border {
+        border-image-slice: 43 48 45 54;
+    }
+}
+
+@media only screen and (min-width: 1300px) {
 
     .double-border {
         border-image-slice: 50 48 50 50;
@@ -1051,11 +1079,6 @@ span {
     }
     .tools {
         padding: 20px 75px 70px 10px;
-    }
-
-    .double-border {
-        border-image-width: 40;
-        
     }
 }
 

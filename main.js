@@ -68,18 +68,6 @@ document.addEventListener('DOMContentLoaded', () => {
 					}
 				}
 			}
-
-			
-
-			if(el.parentElement.classList.contains('relative-figures') || el.parentElement.classList.contains('yellow-block')) {
-				el.addEventListener('mouseover', function () {
-					this.classList.remove('active-anime');
-					console.log('Top:' + el.getBoundingClientRect().top + '---' + 'Height:' +el.offsetHeight);
-					setTimeout(()=>{
-						this.classList.add('active-anime');
-					}, 1000);
-				})
-			}
 			
 		});
 
