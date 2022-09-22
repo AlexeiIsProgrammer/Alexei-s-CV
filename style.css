@@ -32,6 +32,11 @@ main {
     border-width: solid 60px #5ebfbc56;
 } */
 
+.interval-animation {
+    left: 0%;
+    transition: left 1s ease-in-out;
+}
+
 /**/
 
 .yellow-block {
@@ -92,16 +97,27 @@ main {
     opacity: 1;
 }
 
-.blue-waves._anim-items {
+.blue-waves > ._anim-items {
     position: absolute;
     max-width: 70%;
     min-width: 15%;
-    left: -100%;
+    left: -50%;
+    opacity: 0;
 
-    transition: left 1s ease-in-out;
+    transition: left 1s ease-in-out, opacity 1s ease-in-out;
 }
 
-.blue-waves._anim-items.active-anime {
+.blue-waves > ._anim-items.active-anime {
+    left: -20%;
+    opacity: 1;
+}
+
+.blue-waves-second._anim-items{
+    top: 15px;
+    left: 30%;
+}
+
+.blue-waves-second._anim-items.active-anime {
     left: -20%;
 }
 
@@ -263,17 +279,26 @@ main {
     left: -20%;
 }
 
-.blue-waves-2._anim-items {
+.blue-waves-2 > ._anim-items {
     position: absolute;
     min-width: 20%;
+    opacity: 0;
+    right: -40%;
 
-    top: -100px;
-    right: 20%;
-
-    transition: right .5s ease;
+    transition: right .5s ease, opacity .5s ease;
 }
 
-.blue-waves-2._anim-items.active-anime {
+.blue-waves-2 > ._anim-items.active-anime {
+    right: -20%;
+    opacity: 1;
+}
+
+.blue-waves-second-2._anim-items {
+    top: 20px;
+    right: 0%;
+}
+
+.blue-waves-second-2._anim-items.active-anime {
     right: -20%;
 }
 
@@ -889,11 +914,31 @@ span {
 
 @media only screen and (max-width: 400px) {
     .double-border {
-        border-image-slice: 28 48 50 155;
+        border-style: solid;
+        border-image: url(./src/bdr_new.svg);
+        
+        border-image-slice: 48 50 60 80;
+        border-image-repeat: stretch;
+        border-image-outset: 1em;
+        border-image-width: 35;
     }
+
 }
 
 @media only screen and (max-width: 600px) and (min-width: 400px) {
+
+    .double-border {
+        border-style: solid;
+        border-image: url(./src/bdr_new.svg);
+        
+        border-image-repeat: stretch;
+        border-image-slice: 57 49 62 60;
+        border-image-outset: 1em;
+        border-image-width: 35;
+    }
+}
+
+@media only screen and (max-width: 600px){
 
     .tools-list > .subtitle > .bar {
         max-width: 150px;
@@ -941,16 +986,6 @@ span {
 
     .name-text p{
         margin-left: 0;
-    }
-
-    .double-border {
-        border-style: solid;
-        border-image: url(./src/bdr_new.svg);
-        
-        border-image-repeat: stretch;
-        border-image-slice: 52 50 62 49;
-        border-image-outset: 1em;
-        border-image-width: 35;
     }
 }
  
@@ -1002,7 +1037,9 @@ span {
     .name-text p{
         margin-left: -60;
     }
-
+}
+ 
+@media only screen and (max-width: 821px) and (min-width: 600px){
     .double-border {
         border-style: solid;
         border-image: url(./src/bdr_new.svg);
@@ -1013,7 +1050,7 @@ span {
         border-image-width: 35;
     }
 }
- 
+
 @media only screen and (min-width: 821px) {
 
     .info-content > div {

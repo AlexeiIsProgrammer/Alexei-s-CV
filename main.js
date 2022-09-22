@@ -4,18 +4,21 @@ new simpleParallax(leftParallax, {
 	orientation: 'left',
 	overflow: true,
 	delay: 0,
+	scale: 2,
 });
 
 let upParallax = document.querySelectorAll('.relative-figures > img:last-child');
 new simpleParallax(upParallax, {
 	overflow: true,
 	delay: 0,
+	scale: 2,
 });
 
 let leftYellowBlock = document.querySelectorAll('.yellow-block > img:first-child');
 new simpleParallax(leftYellowBlock, {
 	overflow: true,
 	delay: 0,
+	scale: 2,
 });
 
 let upYellowBlock = document.querySelectorAll('.yellow-block > img:last-child');
@@ -23,14 +26,11 @@ new simpleParallax(upYellowBlock, {
 	orientation: 'left',
 	overflow: true,
 	delay: 0,
+	scale: 2,
 });
-
 
 let isEndGTyping = true;
 let dataText = "I believe that I'll be able to make great things in the nearest future!";
-
-const getRelativeElement = document.querySelector('.blue-waves-2');
-const getBound = getRelativeElement.getBoundingClientRect().top;
 
 document.addEventListener('DOMContentLoaded', () => {
 
