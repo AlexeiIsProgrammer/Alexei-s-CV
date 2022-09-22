@@ -33,8 +33,13 @@ let isEndGTyping = true;
 let dataText = "I believe that I'll be able to make great things in the nearest future!";
 
 document.addEventListener('DOMContentLoaded', () => {
-
 	const scrollItems = document.querySelectorAll('._anim-items');
+
+		scrollItems.forEach(el => {
+			if(el.parentElement.classList.contains('relative-figures')) {
+				el.classList.add('interval-animation');
+			}
+		});
 
 	const scrollAnimation = () => {
 		let windowCenter = (window.innerHeight) + window.scrollY;
@@ -42,6 +47,7 @@ document.addEventListener('DOMContentLoaded', () => {
 			let scrollOffset;
 			
 			if(el.parentElement.classList.contains('relative-figures')) {
+
 				//console.log('Top:' + el.getBoundingClientRect().top + '---' + 'Height:' +el.offsetHeight);
 				scrollOffset = el.getBoundingClientRect().top;
 

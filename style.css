@@ -33,8 +33,26 @@ main {
 } */
 
 .interval-animation {
-    left: 0%;
-    transition: left 1s ease-in-out;
+    transform: skew(0deg, 0deg);
+    animation: 3s infinite ease scaling;
+}
+
+@keyframes scaling {
+    0% {
+        transform: skew(0deg, 0deg);
+    }
+    20% {
+        transform: skew(5deg, 5deg);
+    }
+    40% {
+        transform: skew(0deg, 0deg);
+    }
+    60% {
+        transform: skew(-5deg, -5deg);
+    }
+    100% {
+        transform: skew(0deg, 0deg);
+    }
 }
 
 /**/
@@ -1106,11 +1124,11 @@ span {
 @media only screen and (min-width: 1300px) {
 
     .double-border {
-        border-image-slice: 50 48 50 50;
+        border-image-slice: 41 48 50 50;
     }
 }
 
-@media only screen and (max-width: 1535px) {
+@media only screen and (max-width: 1536px) {
     .tools-list {
         padding: 0px 30px 20px 0px;
     }
@@ -1120,7 +1138,6 @@ span {
 }
 
 @media only screen and (min-width: 1536px) {
-
     .tools-list {
         padding: 0px 70px 60px 0px;
     }
