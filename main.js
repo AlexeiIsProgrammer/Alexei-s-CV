@@ -35,6 +35,7 @@ let dataText = "I believe that I'll be able to make great things in the nearest 
 document.addEventListener('DOMContentLoaded', () => {
 	const scrollItems = document.querySelectorAll('._anim-items');
 
+	//Sqew animation
 		scrollItems.forEach(el => {
 			if(el.parentElement.classList.contains('relative-figures')) {
 				el.classList.add('interval-animation');
@@ -118,17 +119,45 @@ function StartTextAnimation(i) {
 
 const getMain = document.querySelector('main');
 
-window.addEventListener('resize', function(event) {
+window.addEventListener('DOMContentLoaded', function(event) {
     if(this.screen.width <= 768) {
-		getMain.classList.remove('letter');
+		getMain.classList.remove('pismeco');
 	}
 	else {
-		getMain.classList.add('letter');
+		getMain.classList.add('pismeco');
+	}
+}, true)
+
+window.addEventListener('resize', function(event) {
+    if(this.screen.width <= 768) {
+		getMain.classList.remove('pismeco');
+	}
+	else {
+		getMain.classList.add('pismeco');
 	}
 }, true);
 
+const contactBtn = document.getElementById('submit');
+const wrapperEnvelope = document.querySelector('.wrapper');
 
+contactBtn.addEventListener('click', () => {
 
+	wrapperEnvelope.style.display = 'flex';
+	document.body.style.overflow = 'hidden';
+
+	window.scroll(0,0);
+
+	wrapperEnvelope.classList.add('show-envelope');
+	document.querySelector('main').classList.add('send-feedback');
+
+	setTimeout(() => {
+		wrapperEnvelope.classList.add('open-envelope');
+	}, 500);
+
+	setTimeout(() => {
+		wrapperEnvelope.classList.remove('open-envelope');
+	}, 4500);
+})
 
 // const textElements = document.querySelectorAll(".textStyle");
 
