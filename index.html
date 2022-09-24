@@ -9,11 +9,24 @@
         <title>Resume</title>
         <script src="https://cdn.jsdelivr.net/npm/simple-parallax-js@5.5.1/dist/simpleParallax.min.js"></script>
         <!--#5EBFBC waves-->
+
+        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+        <script src="ajax.js"></script>
+
     </head>
 
     <body>
         
-        <main class="letter">
+        <div class="wrapper">
+            <div class="lid one"></div>
+            <div class="lid two"></div>
+            <div class="envelope"></div>
+            <p class="feedback">
+                Thanks for your feedback!
+            </p>
+        </div>
+
+        <main class="pismeco">
             <div class="margin-spacing">
 
                 <img class="blue-block _anim-items" src="src/blue_horizontal_block.svg" alt="blueBlock">        
@@ -29,8 +42,9 @@
                         <img class="red-triangle border-triangle _anim-items" src="src/blackTriangle.svg" alt="red-triangle"> 
                     </div>
 
-                    <div class="relative-figures">    
-                        <img class="blue-waves _anim-items" src="src/blue_rounded_waves.svg" alt="blue-waves">
+                    <div class="relative-figures blue-waves">   
+                        <img class="_anim-items" src="src/blue_rounded_waves.svg" alt="blue-waves">
+                        <img class="blue-waves-second _anim-items" src="src/blue_rounded_waves.svg" alt="blue-waves"> 
                     </div>
 
                     <h4 class="_anim-items">
@@ -461,25 +475,36 @@
 
                     <pre><p>Date: _ _  _ _  _ _ _ _</p></pre>
 
-                    <div class="subtitle">
-                        <img src="src/signature.svg" alt="signature" style="width: 30%; min-width: 125px;">
-                        <h4>(Shmulevtsov A. V.)</h4>
-                        <p>Place: Minsk</p>
+                    <div class="relative-figures blue-waves-2">   
+                        <img class="_anim-items" src="src/blue_rounded_waves.svg" alt="waves">
+                        <img class="blue-waves-second-2 _anim-items" src="src/blue_rounded_waves.svg" alt="blue-waves">
                     </div>
-
-                    <div class="relative-figures">   
-                        <img class="blue-waves-2 _anim-items" src="src/blue_rounded_waves.svg" alt="waves">
-                    </div>
-
+                    
                     <div class="relative-figures"> 
                         <img class="red-triangle-2 _anim-items" src="src/redTriangle.svg" alt="red-triangle">
                         <img class="red-triangle-2 border-triangle _anim-items" src="src/blackTriangle.svg" alt="red-triangle">
                     </div>
                 </div>
 
+                <form method="post" id="form" action="" class="topBefore">
+                    <input id="name" type="text" name="name" placeholder="NAME">
+                    <input id="email" type="text" name="mail" placeholder="E-MAIL">
+                    <textarea id="message" type="text" name="msg" placeholder="MESSAGE"></textarea>
+                    <input id="submit" type="submit" value="SEND YOUR FEEDBACK!">
+                </form>
+
+                <div class="signature-block">
+                    <div class="subtitle">
+                        <img src="src/signature.svg" alt="signature" style="width: 30%; min-width: 125px;">
+                        <h4>(Shmulevtsov A. V.)</h4>
+                        <p>Place: Minsk</p>
+                    </div>
+                </div>
+
                 <img class="blue-block _anim-items" src="src/blue_horizontal_block.svg" alt="blueBlock">              
             </div>
         </main>
+
     <script src="./main.js" type="module"></script>
     </body>
 </html>

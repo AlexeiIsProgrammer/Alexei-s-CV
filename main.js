@@ -4,18 +4,21 @@ new simpleParallax(leftParallax, {
 	orientation: 'left',
 	overflow: true,
 	delay: 0,
+	scale: 1.2,
 });
 
 let upParallax = document.querySelectorAll('.relative-figures > img:last-child');
 new simpleParallax(upParallax, {
 	overflow: true,
 	delay: 0,
+	scale: 1.2,
 });
 
 let leftYellowBlock = document.querySelectorAll('.yellow-block > img:first-child');
 new simpleParallax(leftYellowBlock, {
 	overflow: true,
 	delay: 0,
+	scale: 1.2,
 });
 
 let upYellowBlock = document.querySelectorAll('.yellow-block > img:last-child');
@@ -23,17 +26,13 @@ new simpleParallax(upYellowBlock, {
 	orientation: 'left',
 	overflow: true,
 	delay: 0,
+	scale: 1.2,
 });
-
 
 let isEndGTyping = true;
 let dataText = "I believe that I'll be able to make great things in the nearest future!";
 
-const getRelativeElement = document.querySelector('.blue-waves-2');
-const getBound = getRelativeElement.getBoundingClientRect().top;
-
 document.addEventListener('DOMContentLoaded', () => {
-
 	const scrollItems = document.querySelectorAll('._anim-items');
 
 	const scrollAnimation = () => {
@@ -42,6 +41,7 @@ document.addEventListener('DOMContentLoaded', () => {
 			let scrollOffset;
 			
 			if(el.parentElement.classList.contains('relative-figures')) {
+
 				//console.log('Top:' + el.getBoundingClientRect().top + '---' + 'Height:' +el.offsetHeight);
 				scrollOffset = el.getBoundingClientRect().top;
 
@@ -112,17 +112,45 @@ function StartTextAnimation(i) {
 
 const getMain = document.querySelector('main');
 
-window.addEventListener('resize', function(event) {
+window.addEventListener('DOMContentLoaded', function(event) {
     if(this.screen.width <= 768) {
-		getMain.classList.remove('letter');
+		getMain.classList.remove('pismeco');
 	}
 	else {
-		getMain.classList.add('letter');
+		getMain.classList.add('pismeco');
+	}
+}, true)
+
+window.addEventListener('resize', function(event) {
+    if(this.screen.width <= 768) {
+		getMain.classList.remove('pismeco');
+	}
+	else {
+		getMain.classList.add('pismeco');
 	}
 }, true);
 
+const contactBtn = document.getElementById('submit');
+const wrapperEnvelope = document.querySelector('.wrapper');
 
+contactBtn.addEventListener('click', () => {
 
+	wrapperEnvelope.style.display = 'flex';
+	document.body.style.overflow = 'hidden';
+
+	window.scroll(0,0);
+
+	wrapperEnvelope.classList.add('show-envelope');
+	document.querySelector('main').classList.add('send-feedback');
+
+	setTimeout(() => {
+		wrapperEnvelope.classList.add('open-envelope');
+	}, 500);
+
+	setTimeout(() => {
+		wrapperEnvelope.classList.remove('open-envelope');
+	}, 4500);
+})
 
 // const textElements = document.querySelectorAll(".textStyle");
 
