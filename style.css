@@ -36,29 +36,56 @@ main {
     border-width: solid 60px #5ebfbc56;
 } */
 
-.interval-animation {
-    transform: skew(0deg, 0deg);
-    animation: 3s infinite ease scaling;
+.interval-animation > div:nth-child(1) > img {
+    transform: translate(0px, 0px);
+    animation: 7s infinite ease-in-out scaling;
+}
+
+.interval-animation > div:nth-child(2) > img {
+    transform: translate(0px, 0px);
+    animation: 7s infinite ease-in-out scaling2;
+}
+
+.interval-animation > div:nth-child(3) > img {
+    transform: translate(0px, 0px);
+    animation: 7s infinite ease-in-out scaling;
 }
 
 @keyframes scaling {
     0% {
-        transform: skew(0deg, 0deg);
+        transform: translate(0px, 0px);
     }
-    20% {
-        transform: skew(5deg, 5deg);
+    25% {
+        transform: translate(10px, 0px);
     }
-    40% {
-        transform: skew(0deg, 0deg);
+    50% {
+        transform: translate(0px, 0px);
     }
-    60% {
-        transform: skew(-5deg, -5deg);
+    75% {
+        transform: translate(-10px, 0px);
     }
     100% {
-        transform: skew(0deg, 0deg);
+        transform: translate(0px, 0px);
     }
 }
 
+@keyframes scaling2 {
+    0% {
+        transform: translate(0px, 0px);
+    }
+    25% {
+        transform: translate(-10px, 0px);
+    }
+    50% {
+        transform: translate(0px, 0px);
+    }
+    75% {
+        transform: translate(10px, 0px);
+    }
+    100% {
+        transform: translate(0px, 0px);
+    }
+}
 /**/
 
 .yellow-block {
@@ -119,7 +146,7 @@ main {
     opacity: 1;
 }
 
-.blue-waves > ._anim-items {
+.blue-waves > div > ._anim-items {
     position: absolute;
     max-width: 70%;
     min-width: 15%;
@@ -129,7 +156,7 @@ main {
     transition: left 1s ease-in-out, opacity 1s ease-in-out;
 }
 
-.blue-waves > ._anim-items.active-anime {
+.blue-waves > div > ._anim-items.active-anime {
     left: -20%;
     opacity: 1;
 }
@@ -218,29 +245,36 @@ main {
     top: -10px;
 }
 
-.red-waves._anim-items{
+.red-waves > div > ._anim-items{
     position: absolute;
     top: 0%;
     right: -20%;
     min-width: 18%;
+    opacity: 0;
 
-    transition: right .5s ease;
+    transition: right .5s ease, opacity .5s ease;
 }
 
-.red-waves._anim-items.active-anime {
+.red-waves > div > ._anim-items.active-anime {
+    right: -13%;
+    opacity: 1;
+}
+
+.red-waves > div:nth-child(2) > ._anim-items {
+    top: 13px;
+    right: -6%;
+}
+
+.red-waves > div:nth-child(2) > ._anim-items.active-anime {
     right: -13%;
 }
 
-.red-rounded-waves._anim-items {
-    position: absolute;
-    width: 15%;
-    left: -30%;
-
-    transition: left .5s ease;
+.red-waves > div:nth-child(3) > ._anim-items{
+    top: 26px;
 }
 
-.red-rounded-waves._anim-items.active-anime {
-    left: -20%;
+.red-waves > div:nth-child(3) > ._anim-items.active-anime {
+    right: -13%;
 }
 
 .angle {
@@ -316,19 +350,53 @@ main {
     right: -33%;
 }
 
-.red-rounded-waves-2._anim-items {
+.red-rounded-waves > div >  ._anim-items {
     position: absolute;
-    min-width: 15%;
-    left: -50%;
+    width: 15%;
+    left: -30%;
+    opacity: 0;
 
-    transition: left .5s ease;
+    transition: left .5s ease, opacity .5s ease;
 }
 
-.red-rounded-waves-2._anim-items.active-anime {
+.red-rounded-waves > div > ._anim-items.active-anime {
+    left: -20%;
+    opacity: 1;
+}
+
+.red-rounded-waves-second._anim-items {
+    top: 20px;
+    left: -10%;
+}
+
+.red-rounded-waves-second._anim-items.active-anime {
     left: -20%;
 }
 
-.blue-waves-2 > ._anim-items {
+.red-rounded-waves-2> div > ._anim-items {
+    position: absolute;
+    min-width: 15%;
+    left: -50%;
+    opacity: 0;
+
+    transition: left .5s ease, opacity .5s ease;
+}
+
+.red-rounded-waves-2> div > ._anim-items.active-anime {
+    left: -20%;
+    opacity: 1;
+}
+
+.red-rounded-waves-second-2._anim-items {
+    top: 20px;
+    left: -10%;
+}
+
+.red-rounded-waves-second-2._anim-items.active-anime {
+    left: -20%;
+}
+
+.blue-waves-2 > div > ._anim-items {
     position: absolute;
     min-width: 20%;
     opacity: 0;
@@ -337,7 +405,7 @@ main {
     transition: right .5s ease, opacity .5s ease;
 }
 
-.blue-waves-2 > ._anim-items.active-anime {
+.blue-waves-2 > div > ._anim-items.active-anime {
     right: -20%;
     opacity: 1;
 }
@@ -351,17 +419,36 @@ main {
     right: -20%;
 }
 
-.red-waves-2._anim-items {
+.red-waves-2 > div > ._anim-items {
     z-index: 2;
     position: absolute;
     top: 280px;
     left: -20%;
     min-width: 17%;
+    opacity: 0;
 
-    transition: left .5s ease;
+    transition: left .5s ease, opacity .5s ease;
 }
 
-.red-waves-2._anim-items.active-anime {
+.red-waves-2 > div > ._anim-items.active-anime {
+    left: -10%;
+    opacity: 1;
+}
+
+.red-waves-2 > div:nth-child(2) > ._anim-items {
+    top: 293px;
+    left: 0%;
+}
+
+.red-waves-2 > div:nth-child(2) > ._anim-items.active-anime {
+    left: -10%;
+}
+
+.red-waves-2 > div:nth-child(3) > ._anim-items{
+    top: 306px;
+}
+
+.red-waves-2 > div:nth-child(3) > ._anim-items.active-anime {
     left: -10%;
 }
 
@@ -416,8 +503,8 @@ main {
 
 .red-triangle-2._anim-items {
     position: absolute;
-    left: -18%;
-    top: -40px;
+    left: -20%;
+    top: -48px;
     width: 14%;
     transform: scale(0%, 0%);
     opacity: 0;
@@ -532,21 +619,21 @@ main {
 
   @keyframes show-envelope-anim {
     0% {
-        transform: translate(0%, -100%) rotate(180deg);
+        transform: translate(0%, 40%);
     }
 
     100% {
-        transform: translate(0%, 0%) rotate(180deg);
+        transform: translate(0%, 0%);
     }
   }
 
   @keyframes positioning-envelope-anim {
     0% {
-        transform: translate(0%, 0%) rotate(180deg);
+        transform: translate(0%, 0%);
     }
 
     100% {
-        transform: translate(0%, 100%) rotate(0deg);
+        transform: translate(0%, 0%);
     }
   }
 
@@ -570,20 +657,28 @@ main {
     }
 
     100% {
-        transform: translate(0%, -20%);
+        transform: translate(0%, 20%);
         opacity: 1;
     }
   }
 
+  .fixed-wrapper {
+    position: fixed;
+    bottom: 0;
+    height: 600px;
+    width: 100%;
+    display: none;
+    transform: translate(0%, 0%);
+  }
+
   .wrapper {
-    transform: rotate(180deg) translate(0%, 100%);
-    height: 700px;
+    height: 100%;
     width: 100%;
     background-color: #3760C9;
-    position: relative;
-    display: none;
+    position: absolute;
+    display: flex;
     justify-content: center;
-    z-index: 1;
+    z-index: 1; 
   }
   
   .lid {
@@ -592,9 +687,9 @@ main {
     width: 100%;
     top: 0;
     left: 0;
-    border-right: 150px solid transparent;
-    border-bottom: 100px solid transparent;
-    border-left: 150px solid transparent;
+    border-right: 800px solid transparent;
+    border-bottom: 200px solid transparent;
+    border-left: 800px solid transparent;
     transform-origin: top;
     transition: transform 0.25s linear;
   }
@@ -621,10 +716,10 @@ main {
     width: 100%;
     top: 0;
     left: 0;
-    border-top: 100px solid transparent;
-    border-right: 150px solid #C4DFF0;
-    border-bottom: 100px solid #C4DFF0;
-    border-left: 150px solid #a4d4f2;
+    border-top: 300px solid transparent;
+    border-right: 800px solid #C4DFF0;
+    border-bottom: 500px solid #C4DFF0;
+    border-left: 800px solid #a4d4f2;
     z-index: 3;
   }
   
@@ -641,6 +736,10 @@ main {
 /**/
 
 .relative-figures {
+    position: relative;
+}
+
+.relative-figures-waves {
     position: relative;
 }
 
@@ -901,28 +1000,11 @@ main {
 }
 
 .double-border {
-  border-style:solid;
-  border-image: url(./src/bdr.svg);
 
-  border-image-repeat: stretch;
-  border-image-slice: 50 48 50 50;
-  border-image-outset: 1em;
-  border-image-width: 35;
-  /* width: 16em;
-  height: 16em; */
-  position: relative;
-}
-
-.double-border:before {
-  border: 4px dotted #000;
-  content: "";
-  display: block;
-  position: absolute;
-  top: 4px;
-  left: 4px;
-  right: 90px;
-  bottom: 70px;
-  pointer-events: none;
+    background-image: url(/src/horizontal.svg);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    position: relative;
 }
 
 .tools-list {
@@ -1239,13 +1321,7 @@ textarea:hover {
 
 @media only screen and (max-width: 400px) {
     .double-border {
-        border-style: solid;
-        border-image: url(./src/bdr_new.svg);
         
-        border-image-slice: 48 50 60 80;
-        border-image-repeat: stretch;
-        border-image-outset: 1em;
-        border-image-width: 35;
     }
 
 }
@@ -1253,13 +1329,7 @@ textarea:hover {
 @media only screen and (max-width: 600px) and (min-width: 400px) {
 
     .double-border {
-        border-style: solid;
-        border-image: url(./src/bdr_new.svg);
         
-        border-image-repeat: stretch;
-        border-image-slice: 57 49 62 60;
-        border-image-outset: 1em;
-        border-image-width: 35;
     }
 }
 
@@ -1369,13 +1439,7 @@ textarea:hover {
  
 @media only screen and (max-width: 821px) and (min-width: 600px){
     .double-border {
-        border-style: solid;
-        border-image: url(./src/bdr_new.svg);
         
-        border-image-repeat: stretch;
-        border-image-slice: 52 50 62 49;
-        border-image-outset: 1em;
-        border-image-width: 35;
     }
 }
 
@@ -1404,13 +1468,7 @@ textarea:hover {
 
 @media only screen and (min-width: 821px) and (max-width: 1100px){
     .double-border {
-        border-style: solid;
-        border-image: url(./src/bdr_new.svg);
         
-        border-image-repeat: stretch;
-        border-image-slice: 52 50 62 34;
-        border-image-outset: 1em;
-        border-image-width: 35;
     }
 
     .hobbies-list {
@@ -1428,7 +1486,7 @@ textarea:hover {
 @media only screen and (min-width: 1100px) {
 
     .double-border {
-        border-image-slice: 43 48 45 54;
+        
     }
 
     .hobbies-list {
@@ -1440,7 +1498,7 @@ textarea:hover {
 @media only screen and (min-width: 1300px) {
 
     .double-border {
-        border-image-slice: 41 48 50 50;
+        
     }
 }
 

@@ -4,21 +4,21 @@ new simpleParallax(leftParallax, {
 	orientation: 'left',
 	overflow: true,
 	delay: 0,
-	scale: 1.2,
+	scale: 1.3,
 });
 
 let upParallax = document.querySelectorAll('.relative-figures > img:last-child');
 new simpleParallax(upParallax, {
 	overflow: true,
 	delay: 0,
-	scale: 1.2,
+	scale: 1.3,
 });
 
 let leftYellowBlock = document.querySelectorAll('.yellow-block > img:first-child');
 new simpleParallax(leftYellowBlock, {
 	overflow: true,
 	delay: 0,
-	scale: 1.2,
+	scale: 2,
 });
 
 let upYellowBlock = document.querySelectorAll('.yellow-block > img:last-child');
@@ -26,7 +26,7 @@ new simpleParallax(upYellowBlock, {
 	orientation: 'left',
 	overflow: true,
 	delay: 0,
-	scale: 1.2,
+	scale: 2,
 });
 
 let isEndGTyping = true;
@@ -34,6 +34,16 @@ let dataText = "I believe that I'll be able to make great things in the nearest 
 
 document.addEventListener('DOMContentLoaded', () => {
 	const scrollItems = document.querySelectorAll('._anim-items');
+
+	scrollItems.forEach(el => {
+		if(el.parentElement.classList.contains('relative-figures-waves')) {
+			let p = el.parentNode;
+			let w = document.createElement('div');
+			p.replaceChild(w, el);
+			w.appendChild(el);
+			w.parentElement.classList.add('interval-animation');
+		}
+	});
 
 	const scrollAnimation = () => {
 		let windowCenter = (window.innerHeight) + window.scrollY;
@@ -131,14 +141,14 @@ window.addEventListener('resize', function(event) {
 }, true);
 
 const contactBtn = document.getElementById('submit');
-const wrapperEnvelope = document.querySelector('.wrapper');
+const wrapperEnvelope = document.querySelector('.fixed-wrapper');
 
 contactBtn.addEventListener('click', () => {
 
 	wrapperEnvelope.style.display = 'flex';
 	document.body.style.overflow = 'hidden';
 
-	window.scroll(0,0);
+	window.scroll(0, document.documentElement.scrollHeight);
 
 	wrapperEnvelope.classList.add('show-envelope');
 	document.querySelector('main').classList.add('send-feedback');
