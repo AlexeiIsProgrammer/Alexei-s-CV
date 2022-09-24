@@ -4,21 +4,21 @@ new simpleParallax(leftParallax, {
 	orientation: 'left',
 	overflow: true,
 	delay: 0,
-	scale: 2,
+	scale: 1.2,
 });
 
 let upParallax = document.querySelectorAll('.relative-figures > img:last-child');
 new simpleParallax(upParallax, {
 	overflow: true,
 	delay: 0,
-	scale: 2,
+	scale: 1.2,
 });
 
 let leftYellowBlock = document.querySelectorAll('.yellow-block > img:first-child');
 new simpleParallax(leftYellowBlock, {
 	overflow: true,
 	delay: 0,
-	scale: 2,
+	scale: 1.2,
 });
 
 let upYellowBlock = document.querySelectorAll('.yellow-block > img:last-child');
@@ -26,7 +26,7 @@ new simpleParallax(upYellowBlock, {
 	orientation: 'left',
 	overflow: true,
 	delay: 0,
-	scale: 2,
+	scale: 1.2,
 });
 
 let isEndGTyping = true;
@@ -34,13 +34,6 @@ let dataText = "I believe that I'll be able to make great things in the nearest 
 
 document.addEventListener('DOMContentLoaded', () => {
 	const scrollItems = document.querySelectorAll('._anim-items');
-
-	//Sqew animation
-		scrollItems.forEach(el => {
-			if(el.parentElement.classList.contains('relative-figures')) {
-				el.classList.add('interval-animation');
-			}
-		});
 
 	const scrollAnimation = () => {
 		let windowCenter = (window.innerHeight) + window.scrollY;
