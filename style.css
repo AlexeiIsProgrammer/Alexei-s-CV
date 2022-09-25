@@ -967,7 +967,7 @@ main {
 }
 
 .double-border {
-    background-image: url(/src/horizontal.svg);
+    background-image: url(src/horizontal.svg);
     background-repeat: no-repeat;
     background-size: 100% 100%;
     position: relative;
@@ -1326,7 +1326,7 @@ textarea:hover {
     }
 
     .double-border {
-        background-image: url(/src/vertical.svg);
+        background-image: url(src/vertical.svg);
     }
 
     .tools > h4 {
@@ -1353,7 +1353,7 @@ textarea:hover {
     }
 
     .double-border {
-        background-image: url(/src/vertical.svg);
+        background-image: url(src/vertical.svg);
     }
 
     .tools > h4 {
@@ -1477,7 +1477,7 @@ textarea:hover {
  
 @media only screen and (max-width: 821px) and (min-width: 600px){
     .double-border {
-        background-image: url(/src/vertical.svg);
+        background-image: url(src/vertical.svg);
     }
 
     .tools > h4 {
@@ -1525,7 +1525,7 @@ textarea:hover {
 
 @media only screen and (min-width: 821px) and (max-width: 1100px){
     .double-border {
-        background-image: url(/src/vertical.svg);
+        background-image: url(src/vertical.svg);
     }
 
     .tools > h4 {
