@@ -1,7 +1,7 @@
 $( document ).ready(function() {
     $(".submit").click(
 		function(){
-			sendAjaxForm('form', 'action_ajax_form.php');
+			sendAjaxForm('form', 'phpmailer/index.php');
 			return false; 
 		}
 	);
@@ -15,7 +15,7 @@ function sendAjaxForm(ajax_form, url) {
         data: $("#"+ajax_form).serialize(),  // Сеарилизуем объект
         success: function(response) { //Данные отправлены успешно
         	result = $.parseJSON(response);
-        	alert('Name: '+result.name + 'Mail: ' + result.mail + 'Msg: ' + result.msg);
+        	alert('Mail: ' + result.mail);
     	},
     	error: function(response) { // Данные не отправлены
             //alert('Ошибка. Данные не отправлены.');
