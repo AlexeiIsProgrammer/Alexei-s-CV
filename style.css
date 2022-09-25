@@ -38,17 +38,17 @@ main {
 
 .interval-animation > div:nth-child(1) > img {
     transform: translate(0px, 0px);
-    animation: 7s infinite ease-in-out scaling;
+    animation: 3s infinite ease-in-out scaling;
 }
 
 .interval-animation > div:nth-child(2) > img {
     transform: translate(0px, 0px);
-    animation: 7s infinite ease-in-out scaling2;
+    animation: 3s infinite ease-in-out scaling2;
 }
 
 .interval-animation > div:nth-child(3) > img {
     transform: translate(0px, 0px);
-    animation: 7s infinite ease-in-out scaling;
+    animation: 3s infinite ease-in-out scaling;
 }
 
 @keyframes scaling {
@@ -56,13 +56,13 @@ main {
         transform: translate(0px, 0px);
     }
     25% {
-        transform: translate(10px, 0px);
+        transform: translate(1px, 0px);
     }
     50% {
         transform: translate(0px, 0px);
     }
     75% {
-        transform: translate(-10px, 0px);
+        transform: translate(-1px, 0px);
     }
     100% {
         transform: translate(0px, 0px);
@@ -74,13 +74,13 @@ main {
         transform: translate(0px, 0px);
     }
     25% {
-        transform: translate(-10px, 0px);
+        transform: translate(-1px, 0px);
     }
     50% {
         transform: translate(0px, 0px);
     }
     75% {
-        transform: translate(10px, 0px);
+        transform: translate(1px, 0px);
     }
     100% {
         transform: translate(0px, 0px);
