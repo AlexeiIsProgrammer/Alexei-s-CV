@@ -484,7 +484,7 @@
                     </div>
                 </div>
  
-                <input id="submit" type="submit" value="Contact with me!">
+                <input id="submit" class="accept" type="submit" value="Contact with me!">
 
                 <div class="signature-block">
                     <div class="subtitle">
@@ -499,20 +499,24 @@
         </main>
 
         <div class="fixed-wrapper">
-            <div class="wrapper">
-                <div class="lid one"></div>
-                <div class="lid two"></div>
-                <div class="envelope"></div>
-                <p class="feedback">
-                    Thanks for your feedback!
-                </p>
-            </div>
+                <div class="envelope">
+                  
+                    <div class="envelope__top envelope__top_close">
+                        <img src="/src/envelope-top.svg" alt="">
+                        <div class="envelope__relative">
+                            <div class="envelope__body">
+                                <img src="/src/envelope.svg" alt="">
+                            </div>
+                        </div>
+                    </div>   
+                    
+                </div>
+
+                <form method="post" id="form" action="" class="topBefore">
+                    <input id="email" type="text" name="mail" placeholder="EMAIL">
+                    <input id="submit" class="submit" type="submit" value="Contact">
+                </form>
         </div>
-        
-        <!-- <form method="post" id="form" action="" class="topBefore">
-            <input id="email" type="text" name="mail" placeholder="E-MAIL">
-            <input id="submit" type="submit" value="SEND YOUR FEEDBACK!">
-        </form> -->
 
     <script src="./main.js" type="module"></script>
     </body>

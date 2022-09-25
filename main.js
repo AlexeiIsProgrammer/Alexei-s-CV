@@ -140,12 +140,12 @@ window.addEventListener('resize', function(event) {
 	}
 }, true);
 
-const contactBtn = document.getElementById('submit');
+const contactBtn = document.querySelector('.accept');
 const wrapperEnvelope = document.querySelector('.fixed-wrapper');
+const envelopeOpen = document.querySelector('.envelope__top');
+const formAnimaion = document.querySelector('form');
 
 contactBtn.addEventListener('click', () => {
-
-	wrapperEnvelope.style.display = 'flex';
 	document.body.style.overflow = 'hidden';
 
 	window.scroll(0, document.documentElement.scrollHeight);
@@ -154,12 +154,13 @@ contactBtn.addEventListener('click', () => {
 	document.querySelector('main').classList.add('send-feedback');
 
 	setTimeout(() => {
-		wrapperEnvelope.classList.add('open-envelope');
-	}, 500);
+		envelopeOpen.classList.toggle('envelope__top_close'); 
+	}, 2000);
 
 	setTimeout(() => {
-		wrapperEnvelope.classList.remove('open-envelope');
-	}, 4500);
+		envelopeOpen.classList.toggle('envelope__top_close'); 
+		formAnimaion.classList.toggle('form-anim');
+	}, 3500);
 })
 
 // const textElements = document.querySelectorAll(".textStyle");

@@ -1,12 +1,10 @@
 <?php
 
-if (isset($_POST["name"]) && isset($_POST["mail"]) && isset($_POST["msg"])) { 
+if (isset($_POST["mail"])) { 
 
 	// Формируем массив для JSON ответа
     $result = array(
-    	'name' => $_POST["name"],
-    	'mail' => $_POST["mail"],
-        'msg' => $_POST["msg"]
+    	'mail' => $_POST["mail"]
     ); 
 
     // Переводим массив в JSON

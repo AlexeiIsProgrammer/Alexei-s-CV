@@ -601,15 +601,11 @@ main {
 
   @keyframes send-anim {
     0% {
-        transform: translate(0%, 0%) scale(1, 1);
-    }
-
-    50% {
-        transform: translate(0%, 0%) scale(0.1, 1);
+        transform: translate(0%, 0%);
     }
 
     100% {
-        transform: translate(0%, -110%) scale(0.2, 1);
+        transform: translate(0%, 110%);
     }
   }
 
@@ -619,21 +615,21 @@ main {
 
   @keyframes show-envelope-anim {
     0% {
-        transform: translate(0%, 40%);
+        transform: translate(0%, 200%);
     }
 
     100% {
-        transform: translate(0%, 0%);
+        transform: translate(0%, 85%);
     }
   }
 
   @keyframes positioning-envelope-anim {
     0% {
-        transform: translate(0%, 0%);
+        transform: translate(0%, 50%) scale(1);
     }
 
     100% {
-        transform: translate(0%, 0%);
+        transform: translate(0%, -100%) scale(0.5);
     }
   }
 
@@ -646,92 +642,63 @@ main {
     opacity: 0;
   }
 
-  .show-envelope > .feedback {
-    animation: 1s forwards 5s ease feedback-anim;
-  }
-
-  @keyframes feedback-anim {
-    0% {
-        transform: translate(0%, 0%);
-        opacity: 0;
-    }
-
-    100% {
-        transform: translate(0%, 20%);
-        opacity: 1;
-    }
-  }
-
   .fixed-wrapper {
     position: fixed;
     bottom: 0;
-    height: 600px;
     width: 100%;
-    display: none;
-    transform: translate(0%, 0%);
-  }
-
-  .wrapper {
-    height: 100%;
-    width: 100%;
-    background-color: #3760C9;
-    position: absolute;
     display: flex;
+    flex-flow: column nowrap;
     justify-content: center;
-    z-index: 1; 
+    align-items: center;
+    transform: translate(0%, 300%);
   }
-  
-  .lid {
-    position: absolute;
-    height: 100%;
-    width: 100%;
-    top: 0;
-    left: 0;
-    border-right: 800px solid transparent;
-    border-bottom: 200px solid transparent;
-    border-left: 800px solid transparent;
-    transform-origin: top;
-    transition: transform 0.25s linear;
-  }
-  
-  /* Lid when closed */
-  .lid.one {
-    border-top: 100px solid #658ced;
-    transform: rotateX(0deg);
-    z-index: 3;
-    transition-delay: 0.75s;
-  }
-  
-  /* Lid when opened */
-  .lid.two {
-    border-top: 100px solid #3760C9;
-    transform: rotateX(90deg);
-    z-index: 1;
-    transition-delay: 0.5s;
-  }
-  
-  .envelope {
-    position: absolute;
-    height: 100%;
-    width: 100%;
-    top: 0;
-    left: 0;
-    border-top: 300px solid transparent;
-    border-right: 800px solid #C4DFF0;
-    border-bottom: 500px solid #C4DFF0;
-    border-left: 800px solid #a4d4f2;
-    z-index: 3;
-  }
-  
-.wrapper.open-envelope .lid.one {
-    transform: rotateX(90deg);
-    transition-delay: 0s;
-}
 
-.wrapper.open-envelope .lid.two {
-    transform: rotateX(180deg);
-    transition-delay: 0.25s;
-}
+  .envelope {
+    position: relative;
+    width: 100%;
+    height: 110px;
+  }
+
+  .envelope__top {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    transition: 0.2s;
+    transform: translateY(-100%);
+    transform-origin: bottom;
+  }
+  .envelope__body {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    width: 100%;
+  }
+
+  .envelope__relative {
+    position: relative;
+    z-index: -1;
+    top: -70%;
+  }
+
+  .paper {
+    background-color: #fff;
+    width: 100px;
+    height: 80px;
+    text-align: center;
+    position: absolute;
+    left: 50%;
+    margin-left: -50px;
+    transform: translateY(-40px);
+    transition: all 0.5s ease-in-out 5s;
+    bottom: 0;
+  }
+  
+  .envelope__top_close > img {
+      transform: translateY(-110%) rotateX(180deg);
+      z-index: 2;
+  }
 
 /**/
 
@@ -1237,10 +1204,25 @@ input:hover:focus::-ms-placeholder, textarea:hover::focus:-ms-placeholder {
   color: #000;
 }
 
-#form {
-  position: relative;
-  width: 270px;
-  margin: 0px auto 0px auto;
+#form{
+    position: relative;
+    width: 270px;
+    margin: 0px auto 0px auto;
+    opacity: 0;  
+}
+
+.form-anim {
+    animation: 1s ease 1.5s forwards form-animation;
+}
+
+@keyframes form-animation {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;  
+    }
 }
 
 input {
@@ -1301,7 +1283,8 @@ textarea:hover {
   min-width: 270px;
   
   padding: 0;
-  margin: -5px 0px 0px 0px;
+  margin-left: auto;
+  margin-right: auto;
   
   font-family: 'Lato', sans-serif;
   font-size: 0.875em;
@@ -1311,7 +1294,6 @@ textarea:hover {
   cursor: pointer;
   
   border: solid 3px #000;
-  border-top: none;
 }
 
 #submit:hover {
@@ -1362,6 +1344,7 @@ textarea:hover {
         column-gap: 0px;
     }
 }
+
 
 @media only screen and (max-width: 600px) and (min-width: 400px) {
     .tools-list > .subtitle > .bar {
