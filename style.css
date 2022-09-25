@@ -996,11 +996,10 @@ main {
     display: flex;
     flex-flow: column nowrap;
     align-items: center;
-    padding: 20px 0px 20px 0px;
+    justify-content: center;
 }
 
 .double-border {
-
     background-image: url(/src/horizontal.svg);
     background-repeat: no-repeat;
     background-size: 100% 100%;
@@ -1008,10 +1007,12 @@ main {
 }
 
 .tools-list {
-    width: 80%;
-    display: flex;
-    justify-content: space-between;
-    flex-flow: row wrap;
+    display: grid;
+    
+    grid-template-columns: 50% 50%;
+    grid-template-rows: 25% 25% 25% 25%;
+
+    column-gap: 50px;
 }
 
 .tools-list > div {
@@ -1320,25 +1321,79 @@ textarea:hover {
 /**/
 
 @media only screen and (max-width: 400px) {
-    .double-border {
-        
+
+    .tools > h4 {
+        margin-bottom: 0px;
+        font-size: 15px;
     }
 
+    .tools-list > .subtitle > h4 {
+        font-size: 13px;
+    } 
+
+    .tools-list > .subtitle > .bar {
+        max-width: 120px;
+        min-width: 120px;
+
+        max-height: 5px;
+        min-height: 5px;
+    }   
+
+    .tools {
+        padding: 40px 40px 90px 0px;
+    }
+
+    .double-border {
+        background-image: url(/src/vertical.svg);
+    }
+
+    .tools > h4 {
+        margin-bottom: 0px;
+    }
+
+    .tools-list > div {
+        margin: 1px 0px;
+    }
+
+    .tools-list {
+        grid-template-columns: 100%;
+        grid-template-rows: repeat(8, 12.5%);
+
+        column-gap: 0px;
+    }
 }
 
 @media only screen and (max-width: 600px) and (min-width: 400px) {
-
-    .double-border {
-        
-    }
-}
-
-@media only screen and (max-width: 600px){
-
     .tools-list > .subtitle > .bar {
         max-width: 150px;
         min-width: 150px;
     }
+
+    .double-border {
+        background-image: url(/src/vertical.svg);
+    }
+
+    .tools > h4 {
+        margin-bottom: 0px;
+    }
+
+    .tools-list > div {
+        margin: 1px 0px;
+    }
+
+    .tools-list {
+        grid-template-columns: 100%;
+        grid-template-rows: repeat(8, 12.5%);
+
+        column-gap: 0px;
+    }
+
+    .tools {
+        padding: 40px 60px 110px 0px;
+    }
+}
+
+@media only screen and (max-width: 600px){    
 
     .margin-spacing {
         width: 80%;
@@ -1439,7 +1494,26 @@ textarea:hover {
  
 @media only screen and (max-width: 821px) and (min-width: 600px){
     .double-border {
-        
+        background-image: url(/src/vertical.svg);
+    }
+
+    .tools > h4 {
+        margin-bottom: 0px;
+    }
+
+    .tools {
+        padding: 40px 60px 110px 0px;
+    }
+
+    .tools-list > div {
+        margin: 1px 0px;
+    }
+
+    .tools-list {
+        grid-template-columns: 100%;
+        grid-template-rows: repeat(8, 12.5%);
+
+        column-gap: 0px;
     }
 }
 
@@ -1468,7 +1542,26 @@ textarea:hover {
 
 @media only screen and (min-width: 821px) and (max-width: 1100px){
     .double-border {
-        
+        background-image: url(/src/vertical.svg);
+    }
+
+    .tools > h4 {
+        margin-bottom: 0px;
+    }
+
+    .tools {
+        padding: 40px 60px 110px 0px;
+    }
+
+    .tools-list > div {
+        margin: 1px 0px;
+    }
+
+    .tools-list {
+        grid-template-columns: 100%;
+        grid-template-rows: repeat(8, 12.5%);
+
+        column-gap: 0px;
     }
 
     .hobbies-list {
@@ -1476,43 +1569,68 @@ textarea:hover {
         grid-template-rows: 50% 50%;
     }
 }
- 
-@media only screen and (max-width: 1100px) {
-    .tools-list {
-        justify-content: center;
-    }
-}
 
 @media only screen and (min-width: 1100px) {
 
-    .double-border {
-        
+    .tools > h4 {
+        margin-bottom: 0px;
+    }
+
+    .tools {
+        padding: 30px 100px 100px 0px;
+    }
+
+    .tools-list {
+        column-gap: 20px;
+    }
+
+    .tools-list > div {
+        margin: 1px 0px;
     }
 
     .hobbies-list {
         grid-template-columns: 25% 25% 25% 25%;
         grid-template-rows: 100%;
+        column-gap: 5px;
     }
 }
 
 @media only screen and (min-width: 1300px) {
 
-    .double-border {
-        
+    .tools > h4 {
+        margin-left: 50px;
+        margin-bottom: 5px;
+    }
+
+    .tools {
+        padding: 30px 140px 100px 0px;
+    }
+
+    .tools-list {
+        column-gap: 70px;
+    }
+
+    .tools-list > div {
+        margin: 5px 0px;
     }
 }
 
 @media only screen and (max-width: 1536px) {
-    .tools-list {
-        padding: 0px 30px 20px 0px;
-    }
-    .tools {
-        padding: 20px 75px 70px 10px;
-    }
+    
 }
 
 @media only screen and (min-width: 1536px) {
+
     .tools-list {
-        padding: 0px 70px 60px 0px;
+        column-gap: 100px;
+    }
+
+    .tools > h4 {
+        margin-left: 80px;
+        margin-bottom: 15px;
+    }
+
+    .tools {
+        padding: 30px 170px 120px 0px;
     }
 }
