@@ -352,7 +352,7 @@ main {
 
 .red-rounded-waves > div >  ._anim-items {
     position: absolute;
-    width: 15%;
+    min-width: 15%;
     left: -30%;
     opacity: 0;
 
@@ -365,7 +365,7 @@ main {
 }
 
 .red-rounded-waves-second._anim-items {
-    top: 20px;
+    top: 15px;
     left: -10%;
 }
 
@@ -388,7 +388,7 @@ main {
 }
 
 .red-rounded-waves-second-2._anim-items {
-    top: 20px;
+    top: 15px;
     left: -10%;
 }
 
@@ -629,7 +629,7 @@ main {
     }
 
     100% {
-        transform: translate(0%, -100%) scale(0.5);
+        transform: translate(0%, -200%) scale(0.3);
     }
   }
 
@@ -650,7 +650,7 @@ main {
     flex-flow: column nowrap;
     justify-content: center;
     align-items: center;
-    transform: translate(0%, 300%);
+    transform: translate(0%, 510%);
   }
 
   .envelope {
@@ -664,10 +664,14 @@ main {
     top: 0;
     left: 0;
     width: 100%;
+  }
+
+  .envelope__top > img {
     transition: 0.2s;
-    transform: translateY(-100%);
+    transform: translateY(-139%);
     transform-origin: bottom;
   }
+
   .envelope__body {
     position: absolute;
     bottom: 0;
@@ -695,8 +699,8 @@ main {
     bottom: 0;
   }
   
-  .envelope__top_close > img {
-      transform: translateY(-110%) rotateX(180deg);
+  .envelope__top.envelope__top_close > img {
+      transform: translateY(-139%) rotateX(180deg);
       z-index: 2;
   }
 
@@ -1085,7 +1089,7 @@ main {
 
 .declaration {
     width: 80%;
-    height: 30rem;
+    height: 20rem;
 
     justify-content: space-around;
     display: flex;
