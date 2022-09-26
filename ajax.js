@@ -1,8 +1,8 @@
 $(document).ready(function () {
 	$("form").submit(function () {
-		let text = document.getElementById('email').value;
-		alert(text);
-		if(text!= "") {
+		let text = document.getElementById('email');
+		//alert(text.value);
+		if(text.value!= "") {
 			// Получение ID формы
 			var formID = $(this).attr('id');
 			// Добавление решётки к имени ID
@@ -13,19 +13,23 @@ $(document).ready(function () {
 				data: formNm.serialize(),
 				beforeSend: function () {
 					// Вывод текста в процессе отправки
-					alert("Отправка");
+					//alert("Отправка");
 				},
 				success: function (data) {
-					alert("Успешно");
+					//alert("Успешно");
 				},
 				error: function (jqXHR, text, error) {
-					alert("Ошибка отправки: "+ error);
+					//alert("Ошибка отправки: "+ error);
 				}
 			});
 			return false;
 		}
 		else {
-			alert('Введите почту!');
+			text.classList.add('empty-email');
+			setTimeout(() => {
+				text.classList.remove('empty-email');
+			}, 1000);
+			//alert('Введите почту!');
 		}
 	
 	});

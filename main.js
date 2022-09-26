@@ -143,6 +143,7 @@ window.addEventListener('resize', function(event) {
 const contactBtn = document.querySelector('.accept');
 const wrapperEnvelope = document.querySelector('.fixed-wrapper');
 const envelopeOpen = document.querySelector('.envelope__top');
+const envelope = document.querySelector('.envelope');
 const formAnimaion = document.querySelector('form');
 
 contactBtn.addEventListener('click', () => {
@@ -151,6 +152,7 @@ contactBtn.addEventListener('click', () => {
 	window.scroll(0, document.documentElement.scrollHeight);
 
 	wrapperEnvelope.classList.add('show-envelope');
+	envelope.classList.add('envelope-scaling');
 	document.querySelector('main').classList.add('send-feedback');
 
 	setTimeout(() => {
