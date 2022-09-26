@@ -11,7 +11,6 @@
         <!--#5EBFBC waves-->
 
         <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
-        <script src="ajax.js"></script>
 
     </head>
 
@@ -499,10 +498,13 @@
 
         <div class="fixed-wrapper">
                 <div class="envelope">
-                    <div class="envelope__top envelope__top_close">
+                    <div class="envelope__top">
                         <img src="src/envelope-top.svg" alt="">
                         <div class="envelope__relative">
-                            <div class="envelope__body">
+                            <div class="envelope__backbody">
+                                <img src="src/bg-envelope.svg" alt="">
+                            </div>
+                            <div class="envelope__body" style="z-index: 7;">
                                 <img src="src/envelope.svg" alt="">
                             </div>
                         </div>
@@ -510,12 +512,16 @@
                     
                 </div>
 
-                <form method="post" id="form" action="" class="topBefore">
+                <div class="reload-page">
+                </div>
+
+                <form method="post" id="form" action="" class="topBefore" onsubmit="return false;">
                     <input id="email" type="text" name="mail" placeholder="EMAIL">
-                    <input id="submit" class="submit" type="submit" value="Contact">
+                    <input id="submit-btn" class="submit" type="submit" value="Contact">
                 </form>
         </div>
 
+        <script src="ajax.js"></script>
     <script src="./main.js" type="module"></script>
     </body>
 </html>

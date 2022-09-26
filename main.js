@@ -142,9 +142,9 @@ window.addEventListener('resize', function(event) {
 
 const contactBtn = document.querySelector('.accept');
 const wrapperEnvelope = document.querySelector('.fixed-wrapper');
-const envelopeOpen = document.querySelector('.envelope__top');
 const envelope = document.querySelector('.envelope');
 const formAnimaion = document.querySelector('form');
+const mainPage = document.querySelector('main');
 
 contactBtn.addEventListener('click', () => {
 	document.body.style.overflow = 'hidden';
@@ -153,14 +153,11 @@ contactBtn.addEventListener('click', () => {
 
 	wrapperEnvelope.classList.add('show-envelope');
 	envelope.classList.add('envelope-scaling');
-	document.querySelector('main').classList.add('send-feedback');
+	getMain.classList.add('send-feedback');
+	getMain.style.position = 'relative';
+	getMain.style.zIndex = -1;
 
 	setTimeout(() => {
-		envelopeOpen.classList.toggle('envelope__top_close'); 
-	}, 2000);
-
-	setTimeout(() => {
-		envelopeOpen.classList.toggle('envelope__top_close'); 
 		formAnimaion.classList.toggle('form-anim');
 	}, 3500);
 })

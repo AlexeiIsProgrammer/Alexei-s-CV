@@ -619,17 +619,17 @@ main {
 
   @keyframes show-envelope-anim {
     0% {
-        transform: translate(0%, 200%);
+        transform: translate(0%, 400%);
     }
 
     100% {
-        transform: translate(0%, 85%);
+        transform: translate(0%, 15%);
     }
   }
 
   @keyframes positioning-envelope-anim {
     0% {
-        transform: translate(0%, 50%);
+        transform: translate(0%, 15%);
     }
 
     100% {
@@ -643,7 +643,7 @@ main {
     }
 
     100% {
-        transform: scale(0.3);
+        transform: scale(0.8);
     }
   }
 
@@ -708,9 +708,16 @@ main {
     width: 100%;
   }
 
+  .envelope__backbody {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    width: 100%;
+  }
+
   .envelope__relative {
     position: relative;
-    z-index: -1;
     top: -70%;
   }
 
@@ -1233,7 +1240,41 @@ input:hover::placeholder, textarea:hover::placeholder {
 }
 
 input:hover:focus::-ms-placeholder, textarea:hover::focus:-ms-placeholder {
-  color: #000;
+  color: rgb(255, 194, 194);
+}
+
+.reload-page {
+    opacity: 0;
+    position: absolute;
+    margin: 0px auto 0px auto;
+
+    background-image: url('src/reload.svg');
+    background-size: cover;
+    background-size: 100% 100%;
+    min-width: 120px;
+    min-height: 120px;
+    bottom: 120px;
+
+    cursor: pointer;
+    transition: .5s;
+}
+
+.reload-page:hover {
+    transform: rotate(45deg);
+}
+
+.show-reload-panel {
+    animation: 1s ease forwards reload-show-anim;
+}
+
+@keyframes reload-show-anim {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;  
+    }
 }
 
 #form{
@@ -1241,10 +1282,26 @@ input:hover:focus::-ms-placeholder, textarea:hover::focus:-ms-placeholder {
     width: 208px;
     margin: 0px auto 0px auto;
     opacity: 0;  
+    bottom: 120px;
 }
 
 .form-anim {
     animation: 1s ease 1.5s forwards form-animation;
+}
+
+.hide-form-panel {
+    visibility: hidden;
+    animation: 1s ease forwards hide-form-anim;
+}
+
+@keyframes hide-form-anim {
+    0% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;  
+    }
 }
 
 @keyframes form-animation {
@@ -1265,11 +1322,11 @@ input {
   height: 50px;
   padding: 0px 15px 0px 15px;
   
-  background: transparent;
+  background: #fff;
   outline: none;
   color: #000;
   
-  border: solid 3px #000;
+  border: solid 3px rgba(255, 0, 0, 0.549);
   border-bottom: none;
   
   transition: all 0.3s ease-in-out;
@@ -1330,6 +1387,30 @@ textarea:hover {
 
 #submit:hover {
   color: #000;
+}
+
+#submit-btn {
+    max-width: 440px;
+  min-width: 208px;
+  
+  padding: 0;
+  margin-left: auto;
+  margin-right: auto;
+  
+  font-family: 'Lato', sans-serif;
+  font-size: 0.875em;
+  color: #000;
+  
+  outline:none;
+  cursor: pointer;
+  
+  border: solid 3px rgba(255, 0, 0, 0.549);
+  background: #d226299b;
+}
+
+#submit-btn:hover {
+    color: rgba(221, 39, 39, 0.56);
+    background: rgb(53, 45, 45);
 }
 
 /**/
@@ -1506,6 +1587,27 @@ textarea:hover {
     }
 }
 
+@media only screen and (max-width: 821px){
+    @keyframes envelope-scaling-anim {
+        0% {
+            transform: scale(1);
+        }
+    
+        100% {
+            transform: scale(1);
+        }
+    }
+
+    @keyframes positioning-envelope-anim {
+        0% {
+            transform: translate(0%, 15%);
+        }
+    
+        100% {
+            transform: translate(0%, -100%);
+        }
+    }
+}
  
 @media only screen and (max-width: 821px) and (min-width: 600px){
     .double-border {
