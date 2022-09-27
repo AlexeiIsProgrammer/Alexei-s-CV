@@ -625,17 +625,17 @@ main {
 
   @keyframes show-body-envelope-anim {
     0% {
-        transform: translate(0%, 900%);
+        transform: translate(0%, 800%);
     }
 
     100% {
-        transform: translate(0%, 400%);
+        transform: translate(0%, 399%);
     }
   }
 
   @keyframes positioning-body-envelope-anim {
     0% {
-        transform: translate(0%, 400%);
+        transform: translate(0%, 399%);
     }
 
     100% {
@@ -784,7 +784,7 @@ main {
   }
 
   .fixed-wrapper > .envelope > .envelope__top > .envelope__relative > div > img {
-    transform: rotate(180deg) translateY(40%);
+    transform: rotate(180deg) translateY(40.2%);
   }
 
   .paper {
@@ -1308,6 +1308,32 @@ input:hover:focus::-ms-placeholder, textarea:hover:focus::-ms-placeholder {
   color: rgb(255, 194, 194);
 }
 
+.feedback-word {
+    opacity: 0;
+    position: absolute;
+    
+    font-size: 15px;
+    font-weight: 400;
+    font-family: 'Poppins', sans-serif;
+    
+    margin: 0px auto 0px auto;
+    bottom: 400px;
+}
+
+.feedback-word-anim {
+    animation: 1s ease forwards feedback-show-anim;
+}
+
+@keyframes feedback-show-anim {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;  
+    }
+}
+
 .reload-page {
     opacity: 0;
     position: absolute;
@@ -1318,7 +1344,7 @@ input:hover:focus::-ms-placeholder, textarea:hover:focus::-ms-placeholder {
     background-size: 100% 100%;
     min-width: 120px;
     min-height: 120px;
-    bottom: 300px;
+    bottom: 450px;
 
     cursor: pointer;
     transition: .5s;
@@ -1804,7 +1830,7 @@ textarea:hover {
         }
     
         100% {
-            transform: translate(0%, 80%) scaleX(0.9);
+            transform: translate(0%, 80%) scaleX(0.85);
         }
       }
 }
