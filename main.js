@@ -141,8 +141,13 @@ window.addEventListener('resize', function(event) {
 }, true);
 
 const contactBtn = document.querySelector('.accept');
+
 const wrapperEnvelope = document.querySelector('.fixed-wrapper');
 const envelope = document.querySelector('.envelope');
+
+const wrapperBodyEnvelope = document.querySelector('.fixed-wrapper-body');
+const envelopeBody = document.querySelector('.envelope-body');
+
 const formAnimaion = document.querySelector('form');
 const mainPage = document.querySelector('main');
 
@@ -152,10 +157,14 @@ contactBtn.addEventListener('click', () => {
 	window.scroll(0, document.documentElement.scrollHeight);
 
 	wrapperEnvelope.classList.add('show-envelope');
+	wrapperBodyEnvelope.classList.add('show-body-envelope');
+
 	envelope.classList.add('envelope-scaling');
+	envelopeBody.classList.add('envelope-body-scaling');
+
 	getMain.classList.add('send-feedback');
 	getMain.style.position = 'relative';
-	getMain.style.zIndex = -1;
+	getMain.style.zIndex = '1';
 
 	setTimeout(() => {
 		formAnimaion.classList.toggle('form-anim');

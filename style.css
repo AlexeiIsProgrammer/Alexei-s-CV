@@ -1,9 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
 
-element {
-    --margin-figure: 30px;
-}
-
 * {
     box-sizing: border-box;
     margin: 0px;
@@ -596,7 +592,7 @@ main {
   }
 
   .send-feedback {
-    animation: 2s ease forwards 2s send-anim;
+    animation: 2s ease forwards 2s send-anim, 1s ease forwards 4s send-scaling;
   }
 
   @keyframes send-anim {
@@ -605,7 +601,55 @@ main {
     }
 
     100% {
-        transform: translate(0%, 110%);
+        transform: translate(0%, 90%);
+    }
+  }
+
+  @keyframes send-scaling {
+    0% {
+        transform: translate(0%, 90%) scale(1, 1);
+    }
+
+    100% {
+        transform: translate(0%, 38%) scale(0.7, 0.22);
+    }
+  }
+
+  .show-body-envelope {
+    animation: 2s ease forwards show-body-envelope-anim, 1s ease 4s forwards positioning-body-envelope-anim;
+  }
+  
+  .envelope-body-scaling {
+    animation: 1s ease 4s forwards envelope-body-scaling-anim;
+  }
+
+  @keyframes show-body-envelope-anim {
+    0% {
+        transform: translate(0%, 900%);
+    }
+
+    100% {
+        transform: translate(0%, 400%);
+    }
+  }
+
+  @keyframes positioning-body-envelope-anim {
+    0% {
+        transform: translate(0%, 400%);
+    }
+
+    100% {
+        transform: translate(0%, 100%);
+    }
+  }
+
+  @keyframes envelope-body-scaling-anim {
+    0% {
+        transform: scale(1);
+    }
+
+    100% {
+        transform: scale(0.8);
     }
   }
 
@@ -619,21 +663,21 @@ main {
 
   @keyframes show-envelope-anim {
     0% {
-        transform: translate(0%, 400%);
+        transform: translate(0%, 910%);
     }
 
     100% {
-        transform: translate(0%, 15%);
+        transform: translate(0%, 120%);
     }
   }
 
   @keyframes positioning-envelope-anim {
     0% {
-        transform: translate(0%, 15%);
+        transform: translate(0%, 120%);
     }
 
     100% {
-        transform: translate(0%, -150%);
+        transform: translate(0%, -341%);
     }
   }
 
@@ -678,10 +722,28 @@ main {
     flex-flow: column nowrap;
     justify-content: center;
     align-items: center;
-    transform: translate(0%, 510%);
+    transform: translate(0%, 910%);
+  }
+
+  .fixed-wrapper-body {
+    z-index: 1;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+    transform: translate(0%, 1500%);
   }
 
   .envelope {
+    position: relative;
+    width: 100%;
+    height: 110px;
+  }
+
+  .envelope-body {
     position: relative;
     width: 100%;
     height: 110px;
@@ -696,7 +758,7 @@ main {
 
   .envelope__top > img {
     transition: 0.2s;
-    transform: translateY(-139%);
+    transform: translateY(-140%);
     transform-origin: bottom;
   }
 
@@ -721,6 +783,10 @@ main {
     top: -70%;
   }
 
+  .fixed-wrapper > .envelope > .envelope__top > .envelope__relative > div > img {
+    transform: rotate(180deg) translateY(40%);
+  }
+
   .paper {
     background-color: #fff;
     width: 100px;
@@ -735,8 +801,7 @@ main {
   }
   
   .envelope__top.envelope__top_close > img {
-      transform: translateY(-139%) rotateX(180deg);
-      z-index: 2;
+      transform: translateY(-140%) rotateX(180deg);
   }
 
 /**/
@@ -1239,7 +1304,7 @@ input:hover::placeholder, textarea:hover::placeholder {
   font-size: 0.875em;
 }
 
-input:hover:focus::-ms-placeholder, textarea:hover::focus:-ms-placeholder {
+input:hover:focus::-ms-placeholder, textarea:hover:focus::-ms-placeholder {
   color: rgb(255, 194, 194);
 }
 
@@ -1253,7 +1318,7 @@ input:hover:focus::-ms-placeholder, textarea:hover::focus:-ms-placeholder {
     background-size: 100% 100%;
     min-width: 120px;
     min-height: 120px;
-    bottom: 120px;
+    bottom: 300px;
 
     cursor: pointer;
     transition: .5s;
@@ -1282,11 +1347,11 @@ input:hover:focus::-ms-placeholder, textarea:hover::focus:-ms-placeholder {
     width: 208px;
     margin: 0px auto 0px auto;
     opacity: 0;  
-    bottom: 120px;
+    bottom: 300px;
 }
 
 .form-anim {
-    animation: 1s ease 1.5s forwards form-animation;
+    animation: 1s ease 1.5s forwards show-form-anim;
 }
 
 .hide-form-panel {
@@ -1304,7 +1369,7 @@ input:hover:focus::-ms-placeholder, textarea:hover::focus:-ms-placeholder {
     }
 }
 
-@keyframes form-animation {
+@keyframes show-form-anim {
     0% {
         opacity: 0;
     }
@@ -1410,7 +1475,7 @@ textarea:hover {
 
 #submit-btn:hover {
     color: rgba(221, 39, 39, 0.56);
-    background: rgb(53, 45, 45);
+    background: #b3aca79b;
 }
 
 /**/
@@ -1534,6 +1599,8 @@ textarea:hover {
     .name-text p{
         margin-left: 0;
     }
+
+
 }
  
 @media only screen and (min-width: 600px) {
@@ -1588,25 +1655,45 @@ textarea:hover {
 }
 
 @media only screen and (max-width: 821px){
-    @keyframes envelope-scaling-anim {
-        0% {
-            transform: scale(1);
-        }
-    
-        100% {
-            transform: scale(1);
-        }
-    }
-
     @keyframes positioning-envelope-anim {
         0% {
             transform: translate(0%, 15%);
         }
     
         100% {
-            transform: translate(0%, -100%);
+            transform: translate(0%, -320%);
         }
-    }
+      }
+    
+      @keyframes envelope-scaling-anim {
+        0% {
+            transform: scale(1);
+        }
+    
+        100% {
+            transform: scale(0.8);
+        }
+      }
+
+      @keyframes positioning-body-envelope-anim {
+        0% {
+            transform: translate(0%, 400%);
+        }
+    
+        100% {
+            transform: translate(0%, 100%);
+        }
+      }
+    
+      @keyframes envelope-body-scaling-anim {
+        0% {
+            transform: scale(1);
+        }
+    
+        100% {
+            transform: scale(0.8);
+        }
+      }
 }
  
 @media only screen and (max-width: 821px) and (min-width: 600px){
@@ -1710,6 +1797,16 @@ textarea:hover {
         grid-template-rows: 100%;
         column-gap: 5px;
     }
+
+    @keyframes send-scaling {
+        0% {
+            transform: translate(0%, 90%) scale(1, 1);
+        }
+    
+        100% {
+            transform: translate(0%, 45%) scale(0.7, 0.22);
+        }
+      }
 }
 
 @media only screen and (min-width: 1300px) {

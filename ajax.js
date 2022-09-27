@@ -2,11 +2,13 @@ const submitBtn = document.getElementById('submit-btn');
 const formPanel = document.getElementById('form'); 
 const reloadPanel = document.querySelector('.reload-page');
 const envelopeOpen = document.querySelector('.envelope__top');
+const fixedWrapper = document.querySelector('.fixed-wrapper');
 
 submitBtn.addEventListener('click', function () {
 	formPanel.classList.add('hide-form-panel');
 	reloadPanel.classList.add('show-reload-panel');
 	envelopeOpen.classList.add('envelope__top_close');
+	fixedWrapper.style.zIndex = '1';
 })
 
 reloadPanel.addEventListener('click', function () {

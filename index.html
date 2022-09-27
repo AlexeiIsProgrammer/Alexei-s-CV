@@ -498,27 +498,35 @@
 
         <div class="fixed-wrapper">
                 <div class="envelope">
-                    <div class="envelope__top">
+                    <div class="envelope__top" style="z-index: auto;">
                         <img src="src/envelope-top.svg" alt="">
-                        <div class="envelope__relative">
+                        <div class="envelope__relative" style="z-index: -1;">
                             <div class="envelope__backbody">
-                                <img src="src/bg-envelope.svg" alt="">
-                            </div>
-                            <div class="envelope__body" style="z-index: 7;">
-                                <img src="src/envelope.svg" alt="">
+                                <img src="src/envelope-top-bg.svg" alt="">
                             </div>
                         </div>
                     </div>   
-                    
                 </div>
+        </div>
 
-                <div class="reload-page">
-                </div>
+        <div class="fixed-wrapper-body">
+            <div class="envelope-body">
+                <div class="envelope__top" style="z-index: auto;">
+                    <div class="envelope__relative" style="z-index: -1;">
+                        <div class="envelope__body">
+                            <img src="src/envelope.svg" alt="">
+                        </div>
+                    </div>
+                </div>   
+            </div>
 
-                <form method="post" id="form" action="" class="topBefore" onsubmit="return false;">
-                    <input id="email" type="text" name="mail" placeholder="EMAIL">
-                    <input id="submit-btn" class="submit" type="submit" value="Contact">
-                </form>
+            <div class="reload-page">
+            </div>
+
+            <form method="post" id="form" action="" class="topBefore" onsubmit="return false;">
+                <input id="email" type="text" name="mail" placeholder="EMAIL">
+                <input id="submit-btn" class="submit" type="submit" value="Contact">
+            </form>
         </div>
 
         <script src="ajax.js"></script>
