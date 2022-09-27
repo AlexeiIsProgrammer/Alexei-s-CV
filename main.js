@@ -163,7 +163,6 @@ contactBtn.addEventListener('click', () => {
 	envelopeBody.classList.add('envelope-body-scaling');
 
 	getMain.classList.add('send-feedback');
-	getMain.style.position = 'relative';
 	getMain.style.zIndex = '1';
 
 	setTimeout(() => {

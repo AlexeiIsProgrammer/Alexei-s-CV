@@ -607,11 +607,11 @@ main {
 
   @keyframes send-scaling {
     0% {
-        transform: translate(0%, 90%) scale(1, 1);
+        transform: translate(0%, 90%);
     }
 
     100% {
-        transform: translate(0%, 38%) scale(0.7, 0.22);
+        transform: translate(0%, 38%);
     }
   }
 
@@ -1391,7 +1391,7 @@ input {
   outline: none;
   color: #000;
   
-  border: solid 3px rgba(255, 0, 0, 0.549);
+  border: solid 3px rgb(198, 70, 69);
   border-bottom: none;
   
   transition: all 0.3s ease-in-out;
@@ -1401,7 +1401,7 @@ input {
 }
 
 input:hover {
-  background: #b3aca7;
+  background: rgb(237, 113, 97);
   color: #000;
 }
 
@@ -1464,18 +1464,18 @@ textarea:hover {
   
   font-family: 'Lato', sans-serif;
   font-size: 0.875em;
-  color: #000;
+  color: #f6f6f6;
   
   outline:none;
   cursor: pointer;
   
-  border: solid 3px rgba(255, 0, 0, 0.549);
-  background: #d226299b;
+  border: solid 3px rgb(198, 70, 69);
+  background: #c64645;
 }
 
 #submit-btn:hover {
-    color: rgba(221, 39, 39, 0.56);
-    background: #b3aca79b;
+    color: #c64645;
+    background: #f6f6f6;
 }
 
 /**/
@@ -1800,11 +1800,11 @@ textarea:hover {
 
     @keyframes send-scaling {
         0% {
-            transform: translate(0%, 90%) scale(1, 1);
+            transform: translate(0%, 90%) scaleX(1);
         }
     
         100% {
-            transform: translate(0%, 45%) scale(0.7, 0.22);
+            transform: translate(0%, 80%) scaleX(0.9);
         }
       }
 }
