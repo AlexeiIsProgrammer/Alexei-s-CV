@@ -784,7 +784,7 @@ main {
   }
 
   .fixed-wrapper > .envelope > .envelope__top > .envelope__relative > div > img {
-    transform: rotate(180deg) translateY(40.2%);
+    transform: rotate(180deg) translateY(40.15%);
   }
 
   .paper {
@@ -1413,7 +1413,7 @@ input {
   max-width: 470px;
   min-width: 208px;
   height: 50px;
-  padding: 0px 15px 0px 15px;
+  padding: 0px 0px 0px 15px;
   
   background: #fff;
   outline: none;
