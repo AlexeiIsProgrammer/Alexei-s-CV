@@ -11,6 +11,10 @@ submitBtn.addEventListener('click', function () {
 	envelopeOpen.classList.add('envelope__top_close');
 	feedback.classList.add('feedback-word-anim');
 	fixedWrapper.style.zIndex = '1';
+
+	setTimeout(() => {
+		document.querySelector('main').style.visibility = 'hidden';
+	}, 200);
 })
 
 reloadPanel.addEventListener('click', function () {

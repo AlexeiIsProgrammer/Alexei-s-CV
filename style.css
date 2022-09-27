@@ -717,7 +717,7 @@ main {
   .fixed-wrapper {
     position: fixed;
     bottom: 0;
-    width: 100%;
+    width: 1536px;
     display: flex;
     flex-flow: column nowrap;
     justify-content: center;
@@ -729,7 +729,7 @@ main {
     z-index: 1;
     position: fixed;
     bottom: 0;
-    width: 100%;
+    width: 1536px;
     display: flex;
     flex-flow: column nowrap;
     justify-content: center;
@@ -1309,6 +1309,7 @@ input:hover:focus::-ms-placeholder, textarea:hover:focus::-ms-placeholder {
 }
 
 .feedback-word {
+    visibility: hidden;
     opacity: 0;
     position: absolute;
     
@@ -1321,6 +1322,7 @@ input:hover:focus::-ms-placeholder, textarea:hover:focus::-ms-placeholder {
 }
 
 .feedback-word-anim {
+    visibility: visible;
     animation: 1s ease forwards feedback-show-anim;
 }
 
@@ -1547,8 +1549,206 @@ textarea:hover {
 
         column-gap: 0px;
     }
+
+    .fixed-wrapper {
+        width: 400px;
+    }
+
+    .fixed-wrapper-body {
+        width: 400px;
+    }
+
+    @keyframes show-envelope-anim {
+        0% {
+            transform: translate(0%, 200%);
+        }
+    
+        100% {
+            transform: translate(0%, 10%);
+        }
+    }
+    
+    @keyframes positioning-envelope-anim {
+        0% {
+            transform: translate(0%, 10%);
+        }
+    
+        100% {
+            transform: translate(0%, -17%);
+        }
+    }
+
+    @keyframes show-body-envelope-anim {
+        0% {
+            transform: translate(0%, 400%);
+        }
+    
+        100% {
+            transform: translate(0%, 130%);
+        }
+      }
+    
+      @keyframes positioning-body-envelope-anim {
+        0% {
+            transform: translate(0%, 130%);
+        }
+            
+        100% {
+            transform: translate(0%, 100%);
+        }
+      }
+
+    #form {
+        bottom: 220px;
+    }
+
+    .feedback-word {
+        bottom: 250px;
+    }
+
+    .reload-page {
+        bottom: 275px;
+        min-width: 80px;
+        min-height: 80px;
+    }
 }
 
+@media only screen and (max-width: 300px) and (min-width: 280px) { 
+
+    @keyframes send-anim {
+        0% {
+            transform: translate(0%, 0%);
+        }
+    
+        100% {
+            transform: translate(0%, 98%);
+        }
+    }
+
+    @keyframes send-scaling {
+        0% {
+            transform: translate(0%, 98%) scaleX(1);
+        }
+    
+        100% {
+            transform: translate(0%, 96.7%) scaleX(0.73);
+        }
+    }
+}
+
+@media only screen and (max-width: 366px) and (min-width: 300px) { 
+
+    @keyframes send-anim {
+        0% {
+            transform: translate(0%, 0%);
+        }
+    
+        100% {
+            transform: translate(0%, 97%);
+        }
+    }
+
+    @keyframes send-scaling {
+        0% {
+            transform: translate(0%, 97%) scaleX(1);
+        }
+    
+        100% {
+            transform: translate(0%, 96%) scaleX(0.73);
+        }
+    }
+}
+
+@media only screen and (max-width: 400px) and (min-width: 366px) { 
+
+    @keyframes send-anim {
+        0% {
+            transform: translate(0%, 0%);
+        }
+    
+        100% {
+            transform: translate(0%, 97%);
+        }
+    }
+
+    @keyframes send-scaling {
+        0% {
+            transform: translate(0%, 97%) scaleX(1);
+        }
+    
+        100% {
+            transform: translate(0%, 96.5%) scaleX(0.73);
+        }
+    }
+}
+
+@media only screen and (max-width: 500px) and (min-width: 450px) { 
+
+    @keyframes send-anim {
+        0% {
+            transform: translate(0%, 0%);
+        }
+    
+        100% {
+            transform: translate(0%, 95%);
+        }
+    }
+
+    @keyframes send-scaling {
+        0% {
+            transform: translate(0%, 95%) scaleX(1);
+        }
+    
+        100% {
+            transform: translate(0%, 97%) scaleX(0.73);
+        }
+    }
+}
+
+@media only screen and (max-width: 450px) and (min-width: 400px) { 
+
+    @keyframes send-anim {
+        0% {
+            transform: translate(0%, 0%);
+        }
+    
+        100% {
+            transform: translate(0%, 95%);
+        }
+    }
+
+    @keyframes send-scaling {
+        0% {
+            transform: translate(0%, 95%) scaleX(1);
+        }
+    
+        100% {
+            transform: translate(0%, 95%) scaleX(0.73);
+        }
+    }
+}
+
+@media only screen and (max-width: 600px) and (min-width: 500px) { 
+    @keyframes send-anim {
+        0% {
+            transform: translate(0%, 0%);
+        }
+    
+        100% {
+            transform: translate(0%, 95%);
+        }
+    }
+
+    @keyframes send-scaling {
+        0% {
+            transform: translate(0%, 95%) scaleX(1);
+        }
+    
+        100% {
+            transform: translate(0%, 94%) scaleX(0.8);
+        }
+    }
+}
 
 @media only screen and (max-width: 600px) and (min-width: 400px) {
     .tools-list > .subtitle > .bar {
@@ -1577,6 +1777,66 @@ textarea:hover {
 
     .tools {
         padding: 40px 60px 110px 0px;
+    }
+
+    .fixed-wrapper {
+        width: 600px;
+    }
+
+    .fixed-wrapper-body {
+        width: 600px;
+    }
+
+    @keyframes show-envelope-anim {
+        0% {
+            transform: translate(0%, 200%);
+        }
+    
+        100% {
+            transform: translate(0%, -20%);
+        }
+    }
+    
+    @keyframes positioning-envelope-anim {
+        0% {
+            transform: translate(0%, -20%);
+        }
+    
+        100% {
+            transform: translate(0%, -74%);
+        }
+    }
+
+    @keyframes show-body-envelope-anim {
+        0% {
+            transform: translate(0%, 400%);
+        }
+    
+        100% {
+            transform: translate(0%, 150%);
+        }
+      }
+    
+      @keyframes positioning-body-envelope-anim {
+        0% {
+            transform: translate(0%, 150%);
+        }
+    
+        100% {
+            transform: translate(0%, 100%);
+        }
+      }
+
+    #form {
+        bottom: 250px;
+    }
+
+    .feedback-word {
+        bottom: 250px;
+    }
+
+    .reload-page {
+        bottom: 300px;
     }
 }
 
@@ -1679,48 +1939,6 @@ textarea:hover {
         margin-left: -60px;
     }
 }
-
-@media only screen and (max-width: 821px){
-    @keyframes positioning-envelope-anim {
-        0% {
-            transform: translate(0%, 15%);
-        }
-    
-        100% {
-            transform: translate(0%, -320%);
-        }
-      }
-    
-      @keyframes envelope-scaling-anim {
-        0% {
-            transform: scale(1);
-        }
-    
-        100% {
-            transform: scale(0.8);
-        }
-      }
-
-      @keyframes positioning-body-envelope-anim {
-        0% {
-            transform: translate(0%, 400%);
-        }
-    
-        100% {
-            transform: translate(0%, 100%);
-        }
-      }
-    
-      @keyframes envelope-body-scaling-anim {
-        0% {
-            transform: scale(1);
-        }
-    
-        100% {
-            transform: scale(0.8);
-        }
-      }
-}
  
 @media only screen and (max-width: 821px) and (min-width: 600px){
     .double-border {
@@ -1744,6 +1962,86 @@ textarea:hover {
         grid-template-rows: repeat(8, 12.5%);
 
         column-gap: 0px;
+    }
+
+    .fixed-wrapper {
+        width: 800px;
+    }
+
+    .fixed-wrapper-body {
+        width: 800px;
+    }
+
+    @keyframes send-anim {
+        0% {
+            transform: translate(0%, 0%);
+        }
+    
+        100% {
+            transform: translate(0%, 95%);
+        }
+    }
+
+    @keyframes send-scaling {
+        0% {
+            transform: translate(0%, 95%) scaleX(1);
+        }
+    
+        100% {
+            transform: translate(0%, 93%) scaleX(0.8);
+        }
+    }
+
+    @keyframes show-envelope-anim {
+        0% {
+            transform: translate(0%, 200%);
+        }
+    
+        100% {
+            transform: translate(0%, -90%);
+        }
+    }
+    
+    @keyframes positioning-envelope-anim {
+        0% {
+            transform: translate(0%, -90%);
+        }
+    
+        100% {
+            transform: translate(0%, -131.05%);
+        }
+    }
+
+    @keyframes show-body-envelope-anim {
+        0% {
+            transform: translate(0%, 400%);
+        }
+    
+        100% {
+            transform: translate(0%, 150%);
+        }
+      }
+    
+      @keyframes positioning-body-envelope-anim {
+        0% {
+            transform: translate(0%, 150%);
+        }
+    
+        100% {
+            transform: translate(0%, 100%);
+        }
+      }
+
+    #form {
+        bottom: 250px;
+    }
+
+    .feedback-word {
+        bottom: 250px;
+    }
+
+    .reload-page {
+        bottom: 300px;
     }
 }
 
@@ -1798,6 +2096,55 @@ textarea:hover {
         grid-template-columns: 50% 50%;
         grid-template-rows: 50% 50%;
     }
+
+    .fixed-wrapper {
+        width: 1200px;
+    }
+
+    .fixed-wrapper-body {
+        width: 1200px;
+    }
+
+    @keyframes send-anim {
+        0% {
+            transform: translate(0%, 0%);
+        }
+    
+        100% {
+            transform: translate(0%, 100%);
+        }
+    }
+
+    @keyframes send-scaling {
+        0% {
+            transform: translate(0%, 100%) scaleX(1);
+        }
+    
+        100% {
+            transform: translate(0%, 87%) scaleX(0.85);
+        }
+    }
+
+    @keyframes show-envelope-anim {
+        0% {
+            transform: translate(0%, 910%);
+        }
+    
+        100% {
+            transform: translate(0%, 240%);
+        }
+    }
+    
+    @keyframes positioning-envelope-anim {
+        0% {
+            transform: translate(0%, 240%);
+        }
+    
+        100% {
+            transform: translate(0%, -245.05%);
+        }
+    }
+
 }
 
 @media only screen and (min-width: 1100px) {
@@ -1824,9 +2171,19 @@ textarea:hover {
         column-gap: 5px;
     }
 
+    @keyframes send-anim {
+        0% {
+            transform: translate(0%, 0%);
+        }
+    
+        100% {
+            transform: translate(0%, 95%);
+        }
+    }
+
     @keyframes send-scaling {
         0% {
-            transform: translate(0%, 90%) scaleX(1);
+            transform: translate(0%, 95%) scaleX(1);
         }
     
         100% {
@@ -1853,10 +2210,26 @@ textarea:hover {
     .tools-list > div {
         margin: 5px 0px;
     }
-}
 
-@media only screen and (max-width: 1536px) {
+    @keyframes send-anim {
+        0% {
+            transform: translate(0%, 0%);
+        }
     
+        100% {
+            transform: translate(0%, 100%);
+        }
+    }
+
+    @keyframes send-scaling {
+        0% {
+            transform: translate(0%, 100%) scaleX(1);
+        }
+    
+        100% {
+            transform: translate(0%, 85%) scaleX(0.85);
+        }
+    }
 }
 
 @media only screen and (min-width: 1536px) {
@@ -1872,5 +2245,13 @@ textarea:hover {
 
     .tools {
         padding: 30px 170px 120px 0px;
+    }
+
+    .fixed-wrapper {
+        width: 1536px;
+    }
+
+    .fixed-wrapper-body {
+        width: 1536px;
     }
 }
