@@ -4,18 +4,21 @@ new simpleParallax(leftParallax, {
 	orientation: 'left',
 	overflow: true,
 	delay: 0,
+	scale: 1.3,
 });
 
 let upParallax = document.querySelectorAll('.relative-figures > img:last-child');
 new simpleParallax(upParallax, {
 	overflow: true,
 	delay: 0,
+	scale: 1.3,
 });
 
 let leftYellowBlock = document.querySelectorAll('.yellow-block > img:first-child');
 new simpleParallax(leftYellowBlock, {
 	overflow: true,
 	delay: 0,
+	scale: 2,
 });
 
 let upYellowBlock = document.querySelectorAll('.yellow-block > img:last-child');
@@ -23,17 +26,24 @@ new simpleParallax(upYellowBlock, {
 	orientation: 'left',
 	overflow: true,
 	delay: 0,
+	scale: 2,
 });
-
 
 let isEndGTyping = true;
 let dataText = "I believe that I'll be able to make great things in the nearest future!";
 
-const getRelativeElement = document.querySelector('.blue-waves-2');
-const getBound = getRelativeElement.getBoundingClientRect().top;
-
 document.addEventListener('DOMContentLoaded', () => {
 	const scrollItems = document.querySelectorAll('._anim-items');
+
+	scrollItems.forEach(el => {
+		if(el.parentElement.classList.contains('relative-figures-waves')) {
+			let p = el.parentNode;
+			let w = document.createElement('div');
+			p.replaceChild(w, el);
+			w.appendChild(el);
+			w.parentElement.classList.add('interval-animation');
+		}
+	});
 
 	const scrollAnimation = () => {
 		let windowCenter = (window.innerHeight) + window.scrollY;
@@ -41,6 +51,7 @@ document.addEventListener('DOMContentLoaded', () => {
 			let scrollOffset;
 			
 			if(el.parentElement.classList.contains('relative-figures')) {
+
 				//console.log('Top:' + el.getBoundingClientRect().top + '---' + 'Height:' +el.offsetHeight);
 				scrollOffset = el.getBoundingClientRect().top;
 
@@ -66,18 +77,6 @@ document.addEventListener('DOMContentLoaded', () => {
 						isEndGTyping = true;
 					}
 				}
-			}
-
-			
-
-			if(el.parentElement.classList.contains('relative-figures') || el.parentElement.classList.contains('yellow-block')) {
-				el.addEventListener('mouseover', function () {
-					this.classList.remove('active-anime');
-					console.log('Top:' + el.getBoundingClientRect().top + '---' + 'Height:' +el.offsetHeight);
-					setTimeout(()=>{
-						this.classList.add('active-anime');
-					}, 1000);
-				})
 			}
 			
 		});
@@ -123,14 +122,53 @@ function StartTextAnimation(i) {
 
 const getMain = document.querySelector('main');
 
-window.addEventListener('resize', function(event) {
+window.addEventListener('DOMContentLoaded', function(event) {
     if(this.screen.width <= 768) {
-		getMain.classList.remove('letter');
+		getMain.classList.remove('pismeco');
 	}
 	else {
-		getMain.classList.add('letter');
+		getMain.classList.add('pismeco');
+	}
+}, true)
+
+window.addEventListener('resize', function(event) {
+    if(this.screen.width <= 768) {
+		getMain.classList.remove('pismeco');
+	}
+	else {
+		getMain.classList.add('pismeco');
 	}
 }, true);
+
+const contactBtn = document.querySelector('.accept');
+
+const wrapperEnvelope = document.querySelector('.fixed-wrapper');
+const envelope = document.querySelector('.envelope');
+
+const wrapperBodyEnvelope = document.querySelector('.fixed-wrapper-body');
+const envelopeBody = document.querySelector('.envelope-body');
+
+const formAnimaion = document.querySelector('form');
+const mainPage = document.querySelector('main');
+
+contactBtn.addEventListener('click', () => {
+	document.body.style.overflow = 'hidden';
+
+	window.scroll(0, document.documentElement.scrollHeight);
+
+	wrapperEnvelope.classList.add('show-envelope');
+	wrapperBodyEnvelope.classList.add('show-body-envelope');
+
+	envelope.classList.add('envelope-scaling');
+	envelopeBody.classList.add('envelope-body-scaling');
+
+	getMain.classList.add('send-feedback');
+	getMain.style.zIndex = '1';
+
+	setTimeout(() => {
+		formAnimaion.classList.toggle('form-anim');
+	}, 3500);
+})
 
 // const textElements = document.querySelectorAll(".textStyle");
 
