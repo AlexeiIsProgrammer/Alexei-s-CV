@@ -854,6 +854,21 @@ main {
     margin-left: 10px;
 }
 
+.contacts a {
+    text-decoration: none;
+    color: black;
+}
+
+@media (hover: hover) {
+    .contacts a:hover {
+        text-decoration: underline;
+    }
+}
+
+.contacts a:active {
+    text-decoration: underline;
+}
+
 .margin-spacing > div {
     margin: 50px 0px;
 }
